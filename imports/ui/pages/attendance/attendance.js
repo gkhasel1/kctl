@@ -1,3 +1,3 @@
 import './attendance.html';
 
-import '../../components/attendance/form.js';
+import '../../components/attendance/attendance.js';

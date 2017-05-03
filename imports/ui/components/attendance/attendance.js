@@ -1,6 +1,6 @@
 // // import { Links } from '/imports/api/links/links.js';
 // // import { Meteor } from 'meteor/meteor';
-import './form.html';
+import './attendance.html';
 
 import { FlowRouter } from 'meteor/kadira:flow-router';
 

@@ -1,3 +1,9 @@
+// body {
+//   background-image: url("img/kctl/tennis-bg-sunset.jpg");
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+// }
+
 h1 {
   font-family: "Verdana";
   font-size: 42px;
@@ -22,6 +28,21 @@ h2 {
   text-align: center;
 }
 
+p {
+  font-family: "Verdana";
+  font-size: 20px;
+  line-height: 1.2em;
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: .010em;
+  font-weight: 200;
+  font-style: normal;
+  // text-align: center;
+}
+
+/**
+ * COURT IMAGE BUTTONS
+ **/
 .court-button {
   display: inline-block;
   border: none;
@@ -39,6 +60,9 @@ h2 {
   margin: auto;
 }
 
+/**
+ * OPTIONS BUTTON
+ **/
 .option-button {
   display: block;
   padding: 15px 25px;
@@ -54,6 +78,7 @@ h2 {
   box-shadow: 0 9px #999;
   margin: 0 auto;
   white-space: normal;
+  width: 250px;
 }
 
 .option-button:hover {
@@ -64,4 +89,160 @@ h2 {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+/**
+ * FORMS
+ **/
+.form-style-8{
+  // background-color: rgba(255,255,255,0.8);
+  font-family: "Verdana";
+  width:80%;
+  max-width:800px;
+  padding: 30px;
+  margin: 50px auto;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+}
+// .form-style-8 h2{
+//     background: #4D4D4D;
+//     text-transform: uppercase;
+//     font-family: 'Open Sans Condensed', sans-serif;
+//     color: #797979;
+//     font-size: 18px;
+//     font-weight: 100;
+//     padding: 20px;
+//     margin: -30px -30px 30px -30px;
+// }
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 input[type="tel"],
+.form-style-8 select,
+.form-style-8 textarea,
+{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  background: transparent;
+  margin-bottom: 10px;
+  font: 20px;
+  height: 45px;
+}
+.form-style-8 textarea{
+    resize:none;
+    overflow: hidden;
+}
+.form-style-8 input[type="button"],
+.form-style-8 input[type="submit"]{
+  display: block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin: 0 auto;
+  white-space: normal;
+  width: 200px;
+}
+.form-style-8 input[type="button"]:hover,
+.form-style-8 input[type="submit"]:hover {
+  background-color: #3e8e41
+}
+.form-style-8 input[type="button"]:active,
+.form-style-8 input[type="submit"]:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/**
+ * RADIO
+ **/
+.container {
+  width: 100%;
+  padding: 3px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+}
+.container label {
+  position: relative;
+}
+
+/* Base styles for spans */
+.container span::before,
+.container span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/* Radio buttons */
+.container span.radio:hover {
+  cursor: pointer;
+}
+.container span.radio::before {
+  left: -52px;
+  width: 45px;
+  height: 25px;
+  background-color: #E0E1EB;
+  border-radius: 50px;
+}
+.container span.radio::after {
+  left: -49px;
+  width: 17px;
+  height: 17px;
+  border-radius: 10px;
+  background-color: #B9BBCB;
+  transition: left .25s, background-color .25s;
+}
+
+input[type="radio"]:checked + label span.radio::after {
+  left: -27px;
+  background-color: #4CAF50;
+}
+
+/* Check-boxes */
+.container span.checkbox::before {
+  width: 27px;
+  height: 27px;
+  background-color: #E0E1EB;
+  left: -35px;
+  box-sizing: border-box;
+  border: 3px solid transparent;
+  transition: border-color .2s;
+}
+.container span.checkbox:hover::before {
+  border: 3px solid #4CAF50;
+}
+.container span.checkbox::after {
+  content: '✔';
+  left: -31px;
+  top: 2px;
+  color: transparent;
+  transition: color .2s;
+}
+input[type="checkbox"]:checked + label span.checkbox::after {
+  color: #4CAF50;
 }
