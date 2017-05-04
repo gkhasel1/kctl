@@ -8,21 +8,21 @@
 
       <p>Student First Name</p>
       <input type="text"
-             name="firstName"
+             id="firstName"
              placeholder="John"
              required/>
       <br>
 
       <p>Student Last Name</p>
       <input type="text"
-             name="lastName"
-             placeholder="Smith"
+             id="lastName"
+             placeholder="McEnroe"
              required/>
       <br>
 
-<!--       <p>Gender</p>
+      <p>Gender</p>
       <div class="container">
-        <input type="radio" name="gender" id="male" checked>
+        <input type="radio" name="gender" id="male" required checked>
         <label for="male"><span class="radio">Male</span></label>
       </div>
       <div class="container">
@@ -33,7 +33,7 @@
 
       <p>Student Date of Birth</p>
       <div class="controls">
-        <select class="dob" name="dob-day" id="dob-day">
+        <select name="dob-day" id="dob-day" required>
           <option value="">Day</option>
           <option value="">-</option>
           <option value="01">01</option>
@@ -68,7 +68,7 @@
           <option value="30">30</option>
           <option value="31">31</option>
         </select>
-        <select class="dob" name="dob-month" id="dob-month">
+        <select name="dob-month" id="dob-month" required>
           <option value="">Month</option>
           <option value="">-</option>
           <option value="01">January</option>
@@ -84,9 +84,14 @@
           <option value="11">November</option>
           <option value="12">December</option>
         </select>
-        <select class="dob" name="dob-year" id="dob-year">
+        <select name="dob-year" id="dob-year" required>
           <option value="">Year</option>
           <option value="">-</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
+          <option value="2013">2013</option>
           <option value="2012">2012</option>
           <option value="2011">2011</option>
           <option value="2010">2010</option>
@@ -205,36 +210,245 @@
 
       <p>Parent Name</p>
       <input type="text"
-             name="text"
+             id="parentName"
              placeholder="John Smith"
              required/>
       <br>
 
       <p>Parent Email Address</p>
       <input type="email"
-             name="email"
+             id="parentEmail"
              placeholder="me@example.com"
              required/>
       <br>
 
       <p>Parent Phone Number</p>
       <input type="text"
-             id="parent-phone-number"
+             id="parentPrimaryPhone"
              placeHolder="(800) 555-0000"
              required>
       <br>
 
       <p>Parent Secondary Phone Number</p>
       <input type="text"
-             id="parent-phone-number"
+             id="parentSecondaryPhone"
              placeHolder="(800) 555-0001">
       <br>
 
       <p>Street Address</p>
       <input type="text"
-             name="text"
+             name="parentAddress"
              placeholder="123 Marcy Ave, Apt 4"
              required/>
+      <br>
+
+      <p>Do you or your child live in Marcy Houses?</p>
+      <div class="container">
+        <input type="radio" name="housing" id="both" checked required>
+        <label for="both"><span class="radio">Yes, both my child and I live in Marcy Houses</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="housing" id="child">
+        <label for="child"><span class="radio">Yes, my child lives in Marcy Houses, but I do not</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="housing" id="parent">
+        <label for="parent"><span class="radio">Yes, I live in Marcy Houses without my child</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="housing" id="none">
+        <label for="none"><span class="radio">No, neither my child nor I live in Marcy Houses</span></label>
+      </div>
+      <br>
+
+      <p>If "No", do you and/or your child live in a NYCHA housing development other than Marcy?</p>
+      <div class="container">
+        <input type="radio" name="otherHousing" id="yes">
+        <label for="yes"><span class="radio">Yes</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="otherHousing" id="no">
+        <label for="no"><span class="radio">No</span></label>
+      </div>
+      <br>
+
+      <p>If "Yes", to the above, provide the name of the development here.</p>
+      <input type="text"
+             id="otherHousingName"
+             placeholder="Name"/>
+      <br>
+
+      <p>Which category describes your annual household income?</p>
+      <div class="container">
+        <input type="radio" name="income" id="25below" checked required>
+        <label for="25below"><span class="radio">$24,999 or below</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="income" id="25to50">
+        <label for="25to50"><span class="radio">$25,000 to $49,999</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="income" id="50to75">
+        <label for="50to75"><span class="radio">$50,000 to $74,999</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="income" id="75more">
+        <label for="75more"><span class="radio">$75,000 or more</span></label>
+      </div>
+      <br>
+
+      <p>How many members are part of your household?</p>
+      <div class="container">
+        <input type="radio" name="members" id="1" checked required>
+        <label for="1"><span class="radio">1 (Myself Only)</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="members" id="2">
+        <label for="2"><span class="radio">2</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="members" id="3">
+        <label for="3"><span class="radio">3</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="members" id="4">
+        <label for="4"><span class="radio">4</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="members" id="5">
+        <label for="5"><span class="radio">5</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="members" id="6">
+        <label for="6"><span class="radio">6+</span></label>
+      </div>
+      <br>
+
+      <p>Child's Race/Ethnicity</p>
+      <div class="container">
+        <input type="radio" name="race" id="black" checked required>
+        <label for="black"><span class="radio">African-American/Black</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="race" id="asian">
+        <label for="asian"><span class="radio">Asian/Pacific Islander</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="race" id="white">
+        <label for="white"><span class="radio">Caucasian</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="race" id="latin">
+        <label for="latin"><span class="radio">Hispanic/Latino(a)</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="race" id="arab">
+        <label for="arab"><span class="radio">Middle Eastern</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="race" id="native">
+        <label for="native"><span class="radio">Native American</span></label>
+      </div>
+      <br>
+
+      <p>Emergency Contact Name</p>
+      <input type="text"
+             id="emergencyName"
+             placeholder="Jane Doe"
+             required/>
+      <br>
+
+      <p>Emergency Contact Phone Number</p>
+      <input type="text"
+             id="emergencyPhone"
+             placeholder="(800) 555 - 0002"
+             required/>
+      <br>
+
+      <p>Emergency Contact Relationship to Student</p>
+      <input type="text"
+             id="emergencyRelationship"
+             placeHolder="Aunt"
+             required/>
+      <br>
+
+      <p>Does the Student have any food allergies?</p>
+      <div class="container">
+        <input type="radio" name="allergy" id="yes" required>
+        <label for="yes"><span class="radio">Yes</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="allergy" id="no" checked>
+        <label for="no"><span class="radio">No</span></label>
+      </div>
+      <br>
+
+      <p>If "Yes", what food is your child allergic to?</p>
+      <input type="text"
+             id="allergy"
+             placeHolder="None"/>
+      <br>
+
+      <p>Does the Student have any other Medical Conditions?</p>
+      <input type="text"
+             id="medical"
+             placeHolder="None"/>
+      <br>
+
+      <p>Uniform Size</p>
+      <div class="container">
+        <input type="radio" name="uniform" id="XS" required>
+        <label for="XS"><span class="radio">XS</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="uniform" id="S">
+        <label for="S"><span class="radio">S</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="uniform" id="M" checked>
+        <label for="M"><span class="radio">M</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="uniform" id="L">
+        <label for="L"><span class="radio">L</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="uniform" id="XL">
+        <label for="XL"><span class="radio">XL</span></label>
+      </div>
+      <br>
+
+      <p>How did you hear about us?</p>
+      <div class="container">
+        <input type="radio" name="referral" id="flyer" checked required>
+        <label for="flyer"><span class="radio">Flyer</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="nycha">
+        <label for="nycha"><span class="radio">NYCHA</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="social">
+        <label for="social"><span class="radio">Social Media</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="bbbs">
+        <label for="bbbs"><span class="radio">Big Brothers Big Sisters</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="word">
+        <label for="word"><span class="radio">Word of Mouth</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="other">
+        <label for="other"><span class="radio">Other</span></label>
+      </div>
+      <br>
+
+      <p>If you selected "Other" above, please explain</p>
+      <input type="text"
+             id="referralOthers"
+             placeHolder="I heard about KCTL from..."/>
       <br>
 
       <br>
@@ -245,16 +459,15 @@
           <span class="checkbox">
             I Agree to the
             <a href="https://drive.google.com/file/d/0B0Vuk8XcPJqqUjBtSnhXZE1CdUE/view">
-              Terms and Condtions
+              Student Release Form and Liability Waiver
             </a>
           </span>
         </label>
-      </div> -->
+      </div>
 
       <br>
       <input type="submit"
-             name="submit"
-             value="Register"/>
+             name="submit"/>
     </form>
   </div>
 </template>

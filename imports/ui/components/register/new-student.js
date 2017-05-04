@@ -21,13 +21,20 @@ Template.newStudent.events({
   'submit .register-student'(event) {
     event.preventDefault();
 
+    //implicitly need to save:
+    //  Court Name
+    //  Registration Date
+    const court = FlowRouter.getParam('courtName').toLowerCase();
+    const registeredAt = new Date();
     const target = event.target;
     const fname = event.target.firstName.value.toLowerCase();
     const lname = event.target.lastName.value.toLowerCase();
     console.log("fname :", fname);
     console.log("lname :", lname);
+    console.log("court :", court);
+    console.log("reg :", registeredAt);
 
-    Meteor.call('students.insert', fname, lname, (error) => {
+    Meteor.call('students.insert', fname, lname, court, registeredAt, (error) => {
       if (error) {
         console.log(error);
       } else {

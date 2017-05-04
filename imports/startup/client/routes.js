@@ -62,6 +62,16 @@ FlowRouter.route('/:courtName/new-student', {
 // });
 
 /**
+ * Court Session Attendance
+ **/
+FlowRouter.route('/:courtName/attendance', {
+  name: 'Court Attendance',
+  action(params) {
+    BlazeLayout.render('App', { main: 'Attendance' });
+  },
+});
+
+/**
  * 404
  **/
 FlowRouter.notFound = {

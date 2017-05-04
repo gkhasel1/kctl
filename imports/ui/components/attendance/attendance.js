@@ -1,16 +1,19 @@
-// // import { Links } from '/imports/api/links/links.js';
-// // import { Meteor } from 'meteor/meteor';
+import { Students } from '/imports/api/students/students.js';
+import { Meteor } from 'meteor/meteor';
 import './attendance.html';
 
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
-// Template.info.onCreated(function () {
-//   // Meteor.subscribe('links.all');
-// });
+Template.attendance.onCreated(function () {
+  Meteor.subscribe('students.all');
+});
 
 Template.attendance.helpers({
-  courtName() {
-    return FlowRouter.getParam(courtName);
+  courtName: function () {
+    return FlowRouter.getParam('courtName');
+  },
+  students() {
+    return Students.find({"court": FlowRouter.getParam('courtName').toLowerCase()});
   },
 });
 
@@ -22,7 +25,7 @@ Template.attendance.helpers({
 //     const title = target.title;
 //     const url = target.url;
 
-//     Meteor.call('links.insert', title.value, url.value, (error) => {
+//     Meteor.call('students.insert', title.value, url.value, (error) => {
 //       if (error) {
 //         alert(error.error);
 //       } else {
