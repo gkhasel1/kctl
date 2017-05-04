@@ -1,10 +1,11 @@
 import "./new-student.html";
+import { Students } from '/imports/api/students/students.js';
 
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 Template.newStudent.onCreated(function newStudentOnCreated() {
-  console.log("[student reg param]: ", FlowRouter.getParam('courtName'));
+  Meteor.subscribe('students.all');
 });
 
 Template.newStudent.helpers({
@@ -18,18 +19,17 @@ Template.newStudent.helpers({
 
 Template.newStudent.events({
   'submit .register-student'(event) {
-    console.log("WOAH", target);
     event.preventDefault();
 
     const target = event.target;
-    const fname = event.target.firstName.value;
-    const lname = event.target.lastName.value;
+    const fname = event.target.firstName.value.toLowerCase();
+    const lname = event.target.lastName.value.toLowerCase();
     console.log("fname :", fname);
     console.log("lname :", lname);
 
     Meteor.call('students.insert', fname, lname, (error) => {
       if (error) {
-        alert(error.error);
+        console.log(error);
       } else {
         FlowRouter.go("/" + FlowRouter.getParam('courtName'));
       }

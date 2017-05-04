@@ -2,15 +2,8 @@
   <h1>Kings County Tennis League</h1>
   <h2>{{courtName}}</h2>
   <ul>
-    <li>
-      <form class="info-link-add">
-        <input type="text" name="title" placeholder="Title" required>
-        <input type="url" name="url" placeholder="Url" required>
-        <input type="submit" name="submit" value="Add new link">
-      </form>
-    </li>
-    {{#each links}}
-      <li><a href="{{url}}" target="_blank">{{title}}</a></li>
+    {{#each students}}
+      <li>{{firstName}} {{lastName}}</li>
     {{/each}}
   </ul>
 </template>
