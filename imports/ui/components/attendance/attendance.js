@@ -10,10 +10,26 @@ Template.attendance.onCreated(function () {
 
 Template.attendance.helpers({
   courtName: function () {
-    return FlowRouter.getParam('courtName');
+    var c = FlowRouter.getParam('courtName');
+    return c.charAt(0).toUpperCase() + c.slice(1);
   },
   students() {
     return Students.find({"court": FlowRouter.getParam('courtName').toLowerCase()});
+  },
+});
+
+Template.attendance.events({
+  'submit .attendance'(event) {
+  	event.preventDefault();
+
+  	var id = event.target.id.value;
+		Meteor.call('students.markAttendance', id, (error) => {
+      if (error) {
+        console.log(error);
+      } else {
+        FlowRouter.go("/" + FlowRouter.getParam('courtName'));
+      }
+    });
   },
 });
 

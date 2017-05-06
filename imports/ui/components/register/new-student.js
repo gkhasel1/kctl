@@ -21,9 +21,6 @@ Template.newStudent.events({
   'submit .register-student'(event) {
     event.preventDefault();
 
-    //implicitly need to save:
-    //  Court Name
-    //  Registration Date
     const court = FlowRouter.getParam('courtName').toLowerCase();
     const registeredAt = new Date();
     const target = event.target;

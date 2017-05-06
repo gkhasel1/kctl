@@ -18,4 +18,11 @@ Meteor.methods({
       createdAt: new Date(),
     });
   },
+  'students.markAttendance'(id) {
+    check(id, String);
+    return Students.udpate(
+      {_id: id},
+      {$push: {attendance: new Date()}}
+    );
+  },
 });

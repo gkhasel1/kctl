@@ -1,9 +1,21 @@
 <template name="attendance">
   <h1>Kings County Tennis League</h1>
-  <h2>{{courtName}}</h2>
-  <ul>
-    {{#each students}}
-      <li>{{firstName}} {{lastName}}</li>
-    {{/each}}
-  </ul>
+  <h2>{{ courtName }}</h2>
+  <div class="form-style-8">
+	  <form class="attendance">
+		  {{#each students}}
+	    <div class="container">
+	      <input type="checkbox" name="terms" id="{{ _id }}">
+	      <label for="{{ _id }}"><span class="checkbox">{{_id }} {{ firstName }} {{ lastName }}</span>
+	      </label>
+	    </div>
+		  {{/each}}
+
+		  <br>
+		  <br>
+		  <input type="submit"
+		         name="submit"/>
+		  </form>
+
+	</div>
 </template>
