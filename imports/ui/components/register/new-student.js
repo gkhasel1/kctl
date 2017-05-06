@@ -26,6 +26,7 @@ Template.newStudent.events({
     const target = event.target;
     const fname = event.target.firstName.value.toLowerCase();
     const lname = event.target.lastName.value.toLowerCase();
+
     console.log("fname :", fname);
     console.log("lname :", lname);
     console.log("court :", court);
