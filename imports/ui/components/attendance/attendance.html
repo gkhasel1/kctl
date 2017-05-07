@@ -10,7 +10,7 @@
       <br>
 		  {{#each students}}
 	    <div class="container">
-	      <input type="checkbox" class="attendance-check" name="student" id="{{ _id }}">
+	      <input type="checkbox" class="attendance-check" name="student" id="{{ _id }}" checked="{{ attending(_id) }}">
 	      <label for="{{ _id }}">
           <span class="checkbox">{{ capitalize(firstName) }} {{ capitalize(lastName) }}</span>
         </label>

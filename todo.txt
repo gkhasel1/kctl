@@ -1,0 +1,18 @@
+[0] collect all data on reg form
+
+[1] registration collection that links to student
+     - term
+     - court
+     - student id
+     - createAt
+
+[2] register returning students
+    probably could use drop down of student names?
+
+[3] notifications of cancelled classes
+
+[4] new volunteers
+
+[5] returning volunteers
+
+[6] surveys?

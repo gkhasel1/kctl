@@ -2,23 +2,35 @@
 
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
-import { Attendance } from './attendance.js';
+import { Attendance, AttendanceSchema } from './attendance.js';
 
-Attendance._ensureIndex({date: 1}, {unique: 1});
+Attendance._ensureIndex({date: 1, court: 1}, {unique: 1});
 
 Meteor.methods({
-  'attendance.upsert'(studentIds) {
-    check(studentIds, [String]);
-    return Attendance.upsert(
-    {
+  'attendance.upsert'(court, studentIds) {
+    var data = {
+      studentIds: studentIds,
+      court: court,
       date: new Date().toDateString(),
-    },
-    {
-      $set: {
-        studentIds,
-        date: new Date().toDateString(),
-        createdAt: new Date(),
-      }
+      createdAt: new Date(),
+    };
+
+    // console.log("data:", data);
+    // console.log("data:", AttendanceSchema);
+
+    check(data, AttendanceSchema);
+    // AttendanceSchema.validate(data);
+
+    return Attendance.upsert(
+      { date: new Date().toDateString(), },
+      { $set: data, });
+  },
+  'attendance.today'(court) {
+    check(court, String);
+
+    return Attendance.findOne({
+      date: new Date().toDateString(),
+      court: court,
     });
   },
 });
