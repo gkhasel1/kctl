@@ -1,23 +1,22 @@
-// Methods related to students
-
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
-import { Students } from './students.js';
+import { Students, StudentSchema } from './students.js';
 
 Students._ensureIndex({firstName: 1, lastName: 1, parentEmail: 1}, {unique: 1});
 
 Meteor.methods({
-  'students.insert'(firstName, lastName, court, registeredAt) {
-    check(firstName, String);
-    check(lastName, String);
-    check(court, String);
+  'students.insert'(student) {
+    student['createdAt'] = new Date();
+    check(student, StudentSchema);
 
-    return Students.insert({
-      firstName,
-      lastName,
-      court,
-      registeredAt,
-      createdAt: new Date(),
-    });
+    var context = StudentSchema.newContext();
+    if(!context.validate(student)) {
+      var fields = context.invalidKeys();
+      for(var i in fields) {
+        errors.push(context.keyErrorMessage(fields[i].name));
+      }
+      throw errors;
+    }
+    return Students.insert(student);
   },
 });

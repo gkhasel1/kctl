@@ -15,11 +15,7 @@ Meteor.methods({
       createdAt: new Date(),
     };
 
-    // console.log("data:", data);
-    // console.log("data:", AttendanceSchema);
-
     check(data, AttendanceSchema);
-    // AttendanceSchema.validate(data);
 
     return Attendance.upsert(
       { date: new Date().toDateString(), },

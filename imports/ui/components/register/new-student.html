@@ -1,8 +1,7 @@
 <template name="newStudent">
   <h1>Kings County Tennis League</h1>
-  <h2>{{capitalize (courtName)}}</h2>
-  <br>
-  <h2>New Student Registration</h2>
+  <h2>{{courtName}}</h2>
+  <h3>New Student Registration</h3>
   <div class="form-style-8">
     <form class="register-student">
 
@@ -10,30 +9,30 @@
       <input type="text"
              id="firstName"
              placeholder="John"
-             required/>
+             required />
       <br>
 
       <p>Student Last Name</p>
       <input type="text"
              id="lastName"
              placeholder="McEnroe"
-             required/>
+             required />
       <br>
 
       <p>Gender</p>
       <div class="container">
-        <input type="radio" name="gender" id="male" required checked>
+        <input type="radio" name="gender" id="male" value="male" required checked>
         <label for="male"><span class="radio">Male</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="gender" id="female">
+        <input type="radio" name="gender" id="female" value="female">
         <label for="female"><span class="radio">Female</span></label>
       </div>
       <br>
 
       <p>Student Date of Birth</p>
       <div class="controls">
-        <select name="dob-day" id="dob-day" required>
+        <select name="day" id="day" required>
           <option value="">Day</option>
           <option value="">-</option>
           <option value="01">01</option>
@@ -68,7 +67,7 @@
           <option value="30">30</option>
           <option value="31">31</option>
         </select>
-        <select name="dob-month" id="dob-month" required>
+        <select name="month" id="month" required>
           <option value="">Month</option>
           <option value="">-</option>
           <option value="01">January</option>
@@ -84,7 +83,7 @@
           <option value="11">November</option>
           <option value="12">December</option>
         </select>
-        <select name="dob-year" id="dob-year" required>
+        <select name="year" id="year" required>
           <option value="">Year</option>
           <option value="">-</option>
           <option value="2017">2017</option>
@@ -226,13 +225,14 @@
       <input type="text"
              id="parentPrimaryPhone"
              placeHolder="(800) 555-0000"
-             required>
+             required/>
       <br>
 
       <p>Parent Secondary Phone Number</p>
       <input type="text"
              id="parentSecondaryPhone"
-             placeHolder="(800) 555-0001">
+             placeHolder="(800) 555-0001"
+             required/>
       <br>
 
       <p>Street Address</p>
@@ -244,30 +244,30 @@
 
       <p>Do you or your child live in Marcy Houses?</p>
       <div class="container">
-        <input type="radio" name="housing" id="both" checked required>
+        <input type="radio" name="housing" id="both" value="both" required checked>
         <label for="both"><span class="radio">Yes, both my child and I live in Marcy Houses</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="housing" id="child">
+        <input type="radio" name="housing" id="child" value="child">
         <label for="child"><span class="radio">Yes, my child lives in Marcy Houses, but I do not</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="housing" id="parent">
+        <input type="radio" name="housing" id="parent" value="parent">
         <label for="parent"><span class="radio">Yes, I live in Marcy Houses without my child</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="housing" id="none">
-        <label for="none"><span class="radio">No, neither my child nor I live in Marcy Houses</span></label>
+        <input type="radio" name="housing" id="neither" value="neither">
+        <label for="neither"><span class="radio">No, neither my child nor I live in Marcy Houses</span></label>
       </div>
       <br>
 
       <p>If "No", do you and/or your child live in a NYCHA housing development other than Marcy?</p>
       <div class="container">
-        <input type="radio" name="otherHousing" id="yes">
+        <input type="radio" name="otherHousing" id="yes" value="yes">
         <label for="yes"><span class="radio">Yes</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="otherHousing" id="no">
+        <input type="radio" name="otherHousing" id="no" value="no">
         <label for="no"><span class="radio">No</span></label>
       </div>
       <br>
@@ -280,74 +280,74 @@
 
       <p>Which category describes your annual household income?</p>
       <div class="container">
-        <input type="radio" name="income" id="25below" checked required>
+        <input type="radio" name="income" id="25below" value="25below" required checked>
         <label for="25below"><span class="radio">$24,999 or below</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="income" id="25to50">
+        <input type="radio" name="income" id="25to50" value="25to50">
         <label for="25to50"><span class="radio">$25,000 to $49,999</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="income" id="50to75">
+        <input type="radio" name="income" id="50to75" value="50to75">
         <label for="50to75"><span class="radio">$50,000 to $74,999</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="income" id="75more">
-        <label for="75more"><span class="radio">$75,000 or more</span></label>
+        <input type="radio" name="income" id="75above" value="75above">
+        <label for="75above"><span class="radio">$75,000 or more</span></label>
       </div>
       <br>
 
       <p>How many members are part of your household?</p>
       <div class="container">
-        <input type="radio" name="members" id="1" checked required>
+        <input type="radio" name="members" id="1" value="1" required checked>
         <label for="1"><span class="radio">1 (Myself Only)</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="members" id="2">
+        <input type="radio" name="members" id="2" value="2">
         <label for="2"><span class="radio">2</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="members" id="3">
+        <input type="radio" name="members" id="3" value="3">
         <label for="3"><span class="radio">3</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="members" id="4">
+        <input type="radio" name="members" id="4" value="4">
         <label for="4"><span class="radio">4</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="members" id="5">
+        <input type="radio" name="members" id="5" value="5">
         <label for="5"><span class="radio">5</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="members" id="6">
+        <input type="radio" name="members" id="6" value="6">
         <label for="6"><span class="radio">6+</span></label>
       </div>
       <br>
 
       <p>Child's Race/Ethnicity</p>
       <div class="container">
-        <input type="radio" name="race" id="black" checked required>
+        <input type="radio" name="race" id="black" value="black" checked required>
         <label for="black"><span class="radio">African-American/Black</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="race" id="asian">
-        <label for="asian"><span class="radio">Asian/Pacific Islander</span></label>
+        <input type="radio" name="race" id="asian-pacific" value="asian-pacific">
+        <label for="asian-pacific"><span class="radio">Asian/Pacific Islander</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="race" id="white">
+        <input type="radio" name="race" id="white" value="white">
         <label for="white"><span class="radio">Caucasian</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="race" id="latin">
-        <label for="latin"><span class="radio">Hispanic/Latino(a)</span></label>
+        <input type="radio" name="race" id="hispanic" value="hispanic">
+        <label for="hispanic"><span class="radio">Hispanic/Latino(a)</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="race" id="arab">
-        <label for="arab"><span class="radio">Middle Eastern</span></label>
+        <input type="radio" name="race" id="middle-east" value="middle-east">
+        <label for="middle-east"><span class="radio">Middle Eastern</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="race" id="native">
-        <label for="native"><span class="radio">Native American</span></label>
+        <input type="radio" name="race" id="native-american" value="native-american">
+        <label for="native-american"><span class="radio">Native American</span></label>
       </div>
       <br>
 
@@ -373,21 +373,9 @@
       <br>
 
       <p>Does the Student have any food allergies?</p>
-      <div class="container">
-        <input type="radio" name="allergy" id="yes-allergy" >
-        <label for="yes-allergy"><span class="radio">Yes</span></label>
-      </div>
-      <div class="container">
-        <input type="radio" name="allergy" id="no-allergy" required checked>
-        <label for="no-allergy"><span class="radio">No</span></label>
-      </div>
-      <br>
-
-      <p>If "Yes", what food is your child allergic to?</p>
       <input type="text"
              id="allergy"
              placeHolder="None"/>
-      <br>
 
       <p>Does the Student have any other Medical Conditions?</p>
       <input type="text"
@@ -397,64 +385,64 @@
 
       <p>Uniform Size</p>
       <div class="container">
-        <input type="radio" name="uniform" id="XS" required>
+        <input type="radio" name="uniform" id="XS" value="XS" required>
         <label for="XS"><span class="radio">XS</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="uniform" id="S">
+        <input type="radio" name="uniform" id="S" value="S">
         <label for="S"><span class="radio">S</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="uniform" id="M" checked>
+        <input type="radio" name="uniform" id="M" value="M" checked>
         <label for="M"><span class="radio">M</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="uniform" id="L">
+        <input type="radio" name="uniform" id="L" value="L">
         <label for="L"><span class="radio">L</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="uniform" id="XL">
+        <input type="radio" name="uniform" id="XL" value="XL">
         <label for="XL"><span class="radio">XL</span></label>
       </div>
       <br>
 
       <p>How did you hear about us?</p>
       <div class="container">
-        <input type="radio" name="referral" id="flyer" checked required>
+        <input type="radio" name="referral" id="flyer" value="flyer" checked >
         <label for="flyer"><span class="radio">Flyer</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="referral" id="nycha">
+        <input type="radio" name="referral" id="nycha" value="nycha">
         <label for="nycha"><span class="radio">NYCHA</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="referral" id="social">
+        <input type="radio" name="referral" id="social" value="social">
         <label for="social"><span class="radio">Social Media</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="referral" id="bbbs">
+        <input type="radio" name="referral" id="bbbs" value="bbbs">
         <label for="bbbs"><span class="radio">Big Brothers Big Sisters</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="referral" id="word">
+        <input type="radio" name="referral" id="word" value="word">
         <label for="word"><span class="radio">Word of Mouth</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="referral" id="other">
+        <input type="radio" name="referral" id="other" value="other">
         <label for="other"><span class="radio">Other</span></label>
       </div>
       <br>
 
       <p>If you selected "Other" above, please explain</p>
       <input type="text"
-             id="referralOthers"
+             id="referralOther"
              placeHolder="I heard about KCTL from..."/>
       <br>
 
       <br>
       <br>
       <div class="container">
-        <input type="checkbox" name="terms" id="terms">
+        <input type="checkbox" name="terms" id="terms" required checked>
         <label for="terms">
           <span class="checkbox">
             I Agree to the
