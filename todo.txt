@@ -16,3 +16,5 @@
 [5] returning volunteers
 
 [6] surveys?
+
+[7] hide the management buttons (attendance, data, roster, edit person etc.) unless a password is entered on the options page
