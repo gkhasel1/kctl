@@ -1,17 +1,17 @@
 import "./new-student.html";
 import { Students } from '/imports/api/students/students.js';
+import { Registrations } from '/imports/api/students/students.js';
 
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 Template.newStudent.onCreated(function newStudentOnCreated() {
-  // Meteor.subscribe('students.all');
   court = FlowRouter.getParam('courtName');
 });
 
 Template.newStudent.helpers({
   courtName: function () {
-    return court.charAt(0).toUpperCase()+ court.slice(1)
+    return court.charAt(0).toUpperCase()+ court.slice(1);
   },
 });
 
@@ -20,6 +20,7 @@ Template.newStudent.events({
     event.preventDefault();
     var target = event.target;
     var student = {
+      "court": court,
       "firstName": target.firstName.value,
       "lastName": target.lastName.value,
       "gender": target.gender.value,
@@ -43,16 +44,27 @@ Template.newStudent.events({
       "uniform": target.uniform.value,
       "referral": target.referral.value,
       "referralOther": target.referralOther.value,
-    }
+    };
 
     console.log(student);
 
-    Meteor.call('students.insert', student, (error) => {
+    Meteor.call('students.insert', student, (error, result) => {
       if (error) {
         console.log(error);
-        alert(error);
+        alert("Error: Failed to create student");
       } else {
-        FlowRouter.go("/" + FlowRouter.getParam('courtName'));
+        var entityId = result;
+        console.log("result-student:", result);
+
+        Meteor.call('registrations.insert', court, entityId, "student", (error, result) => {
+          if (error) {
+            console.log(error);
+            alert("Error: Failed to register student");
+          } else {
+            console.log("result-reg:", result);
+            FlowRouter.go("/" + court);
+          }
+        });
       }
     });
   },

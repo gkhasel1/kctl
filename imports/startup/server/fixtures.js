@@ -4,20 +4,21 @@ import { Meteor } from 'meteor/meteor';
 import { Students } from '../../api/students/students.js';
 
 Meteor.startup(() => {
-  if (Students.find().count() === 0) {
-    const data = [
-      {
-        firstName: 'Ammon',
-        lastName: 'Kansupada',
-        createdAt: new Date(),
-      },
-      {
-        firstName: 'G',
-        lastName: 'K',
-        createdAt: new Date(),
-      },
-    ];
+  console.log("Server Startup");
+  // if (Students.find().count() === 0) {
+  //   const data = [
+  //     {
+  //       firstName: 'Ammon',
+  //       lastName: 'Kansupada',
+  //       createdAt: new Date(),
+  //     },
+  //     {
+  //       firstName: 'G',
+  //       lastName: 'K',
+  //       createdAt: new Date(),
+  //     },
+  //   ];
 
-    data.forEach(student => Students.insert(student));
-  }
+  //   data.forEach(student => Students.insert(student));
+  // }
 });

@@ -38,12 +38,10 @@ export const StudentSchema = new SimpleSchema({
   parentPrimaryPhone: {
     label: "Parents primary phone number",
     type: String,
-    regEx: /^0{1}\d{10}$/,
   },
   parentSecondaryPhone: {
     label: "Parents secondary phone number",
     type: String,
-    regEx: /^0{1}\d{10}$/,
   },
   parentAddress: {
     label: "Parents primary address",
@@ -86,7 +84,6 @@ export const StudentSchema = new SimpleSchema({
   emergencyPhone: {
     label: "Emergency contact phone",
     type: String,
-    regEx: /^0{1}\d{10}$/,
   },
   emergencyRelationship: {
     label: "Emergency contact relationship to student",
@@ -120,5 +117,10 @@ export const StudentSchema = new SimpleSchema({
   createdAt: {
     label: "Datetime that student was created",
     type: Date,
+  },
+  court: {
+    label: "Court student is playing on.",
+    type: String,
+    allowedValues: ['marcy', 'sumner', 'robinson', 'lafayette', 'tompkins'],
   },
 });

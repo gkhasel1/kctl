@@ -1,22 +1,21 @@
 import { Students } from '/imports/api/students/students.js';
 import { Attendance } from '/imports/api/attendance/attendance.js';
 import { Meteor } from 'meteor/meteor';
-import { Session } from 'meteor/session'
-import './attendance.html';
-
+import { Session } from 'meteor/session';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import './attendance.html';
 
 Template.attendance.onCreated(function () {
   court = FlowRouter.getParam('courtName').toLowerCase();
   Meteor.subscribe('students.court', court);
   Meteor.subscribe('attendance.date', court);
 
+  // Get present students to mark checkbox
   Meteor.call('attendance.today', court, (error, result) => {
     if (error) {
       console.log(error);
     } else {
       var ids = result ? result.studentIds : [];
-      console.log("res:", ids);
       Session.set("studentIds", ids);
     }
   });

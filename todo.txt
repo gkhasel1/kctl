@@ -1,20 +1,18 @@
-[0] collect all data on reg form
-
-[1] registration collection that links to student
-     - term
-     - court
-     - student id
-     - createAt
-
-[2] register returning students
-    probably could use drop down of student names?
-
-[3] notifications of cancelled classes
-
+TODO
+=====
+[2] notifications of cancelled classes
 [4] new volunteers
+[5] returning student
+[6] returning volunteer
 
-[5] returning volunteers
 
-[6] surveys?
+IMPROVEMENTS
+=============
 
-[7] hide the management buttons (attendance, data, roster, edit person etc.) unless a password is entered on the options page
+ - better validation of registration forms (emails, phone numbers, etc.)
+ - get rid of hardcoded CURRENT_SEASON value
+ - use reg to populate attendance
+ - need some kind of start new season button that resets student.court and CURRENT_SEASON etc.
+ - hide the management buttons (attendance, data, roster, edit person etc.) unless a password is entered on the options page
+ - season and court data as fixtures?
+ - surveys?

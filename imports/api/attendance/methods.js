@@ -1,5 +1,3 @@
-// Methods related to attendance
-
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { Attendance, AttendanceSchema } from './attendance.js';
@@ -18,8 +16,14 @@ Meteor.methods({
     check(data, AttendanceSchema);
 
     return Attendance.upsert(
-      { date: new Date().toDateString(), },
-      { $set: data, });
+      {
+        date: new Date().toDateString(),
+        court: court,
+      },
+      {
+        $set: data,
+      }
+    );
   },
   'attendance.today'(court) {
     check(court, String);

@@ -4,7 +4,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 
 
 Template.options.onCreated(function OptionsOnCreated() {
-  console.log("getparam: ", FlowRouter.getParam('courtName'));
+  console.log("court: ", FlowRouter.getParam('courtName'));
 });
 
 Template.options.helpers({

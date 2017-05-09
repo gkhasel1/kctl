@@ -1,5 +1,3 @@
-// All student-related publications
-
 import { Meteor } from 'meteor/meteor';
 import { Attendance } from '../attendance.js';
 
