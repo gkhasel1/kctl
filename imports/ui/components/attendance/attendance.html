@@ -3,26 +3,31 @@
   <h2>{{ courtName }}</h2>
   <h3>{{ formattedDate }}</h3>
   <div class="form-style-8">
-	  <form class="attendance">
+    <form class="attendance">
       <p style="font-size:14px">
         You can take attendance as many times as you like. Only the last submission will be saved per day.
       </p>
-      <br>
-		  {{#each students}}
-	    <div class="container">
-	      <input type="checkbox" class="attendance-check" name="student" id="{{ _id }}" checked="{{ attending(_id) }}">
-	      <label for="{{ _id }}">
-          <span class="checkbox">{{ capitalize(firstName) }} {{ capitalize(lastName) }}</span>
-        </label>
-	    </div>
-      <br>
-		  {{/each}}
 
-	    <br>
-	    <br>
-	    <input type="submit"
-	           name="submit"/>
-	  </form>
+      <p>Students</p>
+      {{#if students.count}}
+        {{#each students}}
+        <div class="container">
+          <input type="checkbox" class="attendance-check" name="student" id="{{ _id }}" checked="{{ attending(_id) }}">
+          <label for="{{ _id }}">
+            <span class="checkbox">{{ capitalize(firstName) }} {{ capitalize(lastName) }}</span>
+          </label>
+        </div>
+        <br>
+        {{/each}}
+      {{else}}
+        <p style="font-size:14px">No Students Registered</p>
+      {{/if}}
 
-	</div>
+      <br>
+      <br>
+      <input type="submit"
+             name="submit"/>
+    </form>
+
+  </div>
 </template>

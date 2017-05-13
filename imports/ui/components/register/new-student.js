@@ -1,6 +1,6 @@
 import "./new-student.html";
 import { Students } from '/imports/api/students/students.js';
-import { Registrations } from '/imports/api/students/students.js';
+import { Registrations } from '/imports/api/registrations/registrations.js';
 
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';

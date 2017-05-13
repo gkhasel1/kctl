@@ -238,30 +238,30 @@
       <p>Street Address</p>
       <input type="text"
              name="parentAddress"
-             placeholder="123 Marcy Ave, Apt 4"
+             placeholder="123 {{courtName}} Ave, Apt 4"
              required/>
       <br>
 
-      <p>Do you or your child live in Marcy Houses?</p>
+      <p>Do you or your child live in {{courtName}} Houses?</p>
       <div class="container">
         <input type="radio" name="housing" id="both" value="both" required checked>
-        <label for="both"><span class="radio">Yes, both my child and I live in Marcy Houses</span></label>
+        <label for="both"><span class="radio">Yes, both my child and I live in {{courtName}} Houses</span></label>
       </div>
       <div class="container">
         <input type="radio" name="housing" id="child" value="child">
-        <label for="child"><span class="radio">Yes, my child lives in Marcy Houses, but I do not</span></label>
+        <label for="child"><span class="radio">Yes, my child lives in {{courtName}} Houses, but I do not</span></label>
       </div>
       <div class="container">
         <input type="radio" name="housing" id="parent" value="parent">
-        <label for="parent"><span class="radio">Yes, I live in Marcy Houses without my child</span></label>
+        <label for="parent"><span class="radio">Yes, I live in {{courtName}} Houses without my child</span></label>
       </div>
       <div class="container">
         <input type="radio" name="housing" id="neither" value="neither">
-        <label for="neither"><span class="radio">No, neither my child nor I live in Marcy Houses</span></label>
+        <label for="neither"><span class="radio">No, neither my child nor I live in {{courtName}} Houses</span></label>
       </div>
       <br>
 
-      <p>If "No", do you and/or your child live in a NYCHA housing development other than Marcy?</p>
+      <p>If "No", do you and/or your child live in a NYCHA housing development other than {{courtName}}?</p>
       <div class="container">
         <input type="radio" name="otherHousing" id="yes" value="yes">
         <label for="yes"><span class="radio">Yes</span></label>
