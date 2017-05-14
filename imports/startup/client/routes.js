@@ -54,12 +54,12 @@ FlowRouter.route('/:courtName/new-student', {
 /**
  * Register a volunteer for a court
  **/
-// FlowRouter.route('/:courtName/new-volunteer', {
-//   name: 'New Volunteer',
-//   action(params) {
-//     BlazeLayout.render('App', { main: 'RegisterVolunteer' });
-//   },
-// });
+FlowRouter.route('/:courtName/new-volunteer', {
+  name: 'New Volunteer',
+  action(params) {
+    BlazeLayout.render('App', { main: 'RegisterVolunteer' });
+  },
+});
 
 /**
  * Court Session Attendance

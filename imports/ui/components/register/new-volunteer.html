@@ -1,0 +1,448 @@
+<template name="newVolunteer">
+  <h1>Kings County Tennis League</h1>
+  <h2>{{courtName}}</h2>
+  <h3>New Volunteer Registration</h3>
+  <div class="form-style-8">
+    <form class="register-volunteer">
+
+      <p>First Name</p>
+      <input type="text"
+             id="firstName"
+             placeholder="John"
+             required />
+      <br>
+
+      <p>Last Name</p>
+      <input type="text"
+             id="lastName"
+             placeholder="McEnroe"
+             required />
+      <br>
+
+      <p>Gender</p>
+      <div class="container">
+        <input type="radio" name="gender" id="male" value="male" required checked>
+        <label for="male"><span class="radio">Male</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female"><span class="radio">Female</span></label>
+      </div>
+      <br>
+
+      <p>Date of Birth</p>
+      <div class="controls">
+        <select name="day" id="day" required>
+          <option value="">Day</option>
+          <option value="">-</option>
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
+        <select name="month" id="month" required>
+          <option value="">Month</option>
+          <option value="">-</option>
+          <option value="01">January</option>
+          <option value="02">February</option>
+          <option value="03">March</option>
+          <option value="04">April</option>
+          <option value="05">May</option>
+          <option value="06">June</option>
+          <option value="07">July</option>
+          <option value="08">August</option>
+          <option value="09">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+        <select name="year" id="year" required>
+          <option value="">Year</option>
+          <option value="">-</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
+          <option value="2013">2013</option>
+          <option value="2012">2012</option>
+          <option value="2011">2011</option>
+          <option value="2010">2010</option>
+          <option value="2009">2009</option>
+          <option value="2008">2008</option>
+          <option value="2007">2007</option>
+          <option value="2006">2006</option>
+          <option value="2005">2005</option>
+          <option value="2004">2004</option>
+          <option value="2003">2003</option>
+          <option value="2002">2002</option>
+          <option value="2001">2001</option>
+          <option value="2000">2000</option>
+          <option value="1999">1999</option>
+          <option value="1998">1998</option>
+          <option value="1997">1997</option>
+          <option value="1996">1996</option>
+          <option value="1995">1995</option>
+          <option value="1994">1994</option>
+          <option value="1993">1993</option>
+          <option value="1992">1992</option>
+          <option value="1991">1991</option>
+          <option value="1990">1990</option>
+          <option value="1989">1989</option>
+          <option value="1988">1988</option>
+          <option value="1987">1987</option>
+          <option value="1986">1986</option>
+          <option value="1985">1985</option>
+          <option value="1984">1984</option>
+          <option value="1983">1983</option>
+          <option value="1982">1982</option>
+          <option value="1981">1981</option>
+          <option value="1980">1980</option>
+          <option value="1979">1979</option>
+          <option value="1978">1978</option>
+          <option value="1977">1977</option>
+          <option value="1976">1976</option>
+          <option value="1975">1975</option>
+          <option value="1974">1974</option>
+          <option value="1973">1973</option>
+          <option value="1972">1972</option>
+          <option value="1971">1971</option>
+          <option value="1970">1970</option>
+          <option value="1969">1969</option>
+          <option value="1968">1968</option>
+          <option value="1967">1967</option>
+          <option value="1966">1966</option>
+          <option value="1965">1965</option>
+          <option value="1964">1964</option>
+          <option value="1963">1963</option>
+          <option value="1962">1962</option>
+          <option value="1961">1961</option>
+          <option value="1960">1960</option>
+          <option value="1959">1959</option>
+          <option value="1958">1958</option>
+          <option value="1957">1957</option>
+          <option value="1956">1956</option>
+          <option value="1955">1955</option>
+          <option value="1954">1954</option>
+          <option value="1953">1953</option>
+          <option value="1952">1952</option>
+          <option value="1951">1951</option>
+          <option value="1950">1950</option>
+          <option value="1949">1949</option>
+          <option value="1948">1948</option>
+          <option value="1947">1947</option>
+          <option value="1946">1946</option>
+          <option value="1945">1945</option>
+          <option value="1944">1944</option>
+          <option value="1943">1943</option>
+          <option value="1942">1942</option>
+          <option value="1941">1941</option>
+          <option value="1940">1940</option>
+          <option value="1939">1939</option>
+          <option value="1938">1938</option>
+          <option value="1937">1937</option>
+          <option value="1936">1936</option>
+          <option value="1935">1935</option>
+          <option value="1934">1934</option>
+          <option value="1933">1933</option>
+          <option value="1932">1932</option>
+          <option value="1931">1931</option>
+          <option value="1930">1930</option>
+          <option value="1929">1929</option>
+          <option value="1928">1928</option>
+          <option value="1927">1927</option>
+          <option value="1926">1926</option>
+          <option value="1925">1925</option>
+          <option value="1924">1924</option>
+          <option value="1923">1923</option>
+          <option value="1922">1922</option>
+          <option value="1921">1921</option>
+          <option value="1920">1920</option>
+          <option value="1919">1919</option>
+          <option value="1918">1918</option>
+          <option value="1917">1917</option>
+          <option value="1916">1916</option>
+          <option value="1915">1915</option>
+          <option value="1914">1914</option>
+          <option value="1913">1913</option>
+          <option value="1912">1912</option>
+          <option value="1911">1911</option>
+          <option value="1910">1910</option>
+          <option value="1909">1909</option>
+          <option value="1908">1908</option>
+          <option value="1907">1907</option>
+          <option value="1906">1906</option>
+          <option value="1905">1905</option>
+          <option value="1904">1904</option>
+          <option value="1903">1903</option>
+          <option value="1901">1901</option>
+          <option value="1900">1900</option>
+        </select>
+      </div>
+      <br>
+
+      <p>Email Address</p>
+      <input type="email"
+             id="email"
+             placeholder="me@example.com"
+             required/>
+      <br>
+
+      <p>Phone Number</p>
+      <input type="text"
+             id="phone"
+             placeHolder="(800) 555-0000"
+             required/>
+      <br>
+
+      <p>Street Address</p>
+      <input type="text"
+             name="street"
+             placeholder="123 {{courtName}} Ave, Apt 4"
+             required/>
+      <br>
+
+     <!--  <p>Do you or your child live in {{courtName}} Houses?</p>
+      <div class="container">
+        <input type="radio" name="housing" id="both" value="both" required checked>
+        <label for="both"><span class="radio">Yes, both my child and I live in {{courtName}} Houses</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="housing" id="child" value="child">
+        <label for="child"><span class="radio">Yes, my child lives in {{courtName}} Houses, but I do not</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="housing" id="parent" value="parent">
+        <label for="parent"><span class="radio">Yes, I live in {{courtName}} Houses without my child</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="housing" id="neither" value="neither">
+        <label for="neither"><span class="radio">No, neither my child nor I live in {{courtName}} Houses</span></label>
+      </div>
+      <br>
+
+      <p>If "No", do you and/or your child live in a NYCHA housing development other than {{courtName}}?</p>
+      <div class="container">
+        <input type="radio" name="otherHousing" id="yes" value="yes">
+        <label for="yes"><span class="radio">Yes</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="otherHousing" id="no" value="no">
+        <label for="no"><span class="radio">No</span></label>
+      </div>
+      <br>
+
+      <p>If "Yes", to the above, provide the name of the development here.</p>
+      <input type="text"
+             id="otherHousingName"
+             placeholder="Name"/>
+      <br>
+
+      <p>Which category describes your annual household income?</p>
+      <div class="container">
+        <input type="radio" name="income" id="25below" value="25below" required checked>
+        <label for="25below"><span class="radio">$24,999 or below</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="income" id="25to50" value="25to50">
+        <label for="25to50"><span class="radio">$25,000 to $49,999</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="income" id="50to75" value="50to75">
+        <label for="50to75"><span class="radio">$50,000 to $74,999</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="income" id="75above" value="75above">
+        <label for="75above"><span class="radio">$75,000 or more</span></label>
+      </div>
+      <br>
+
+      <p>How many members are part of your household?</p>
+      <div class="container">
+        <input type="radio" name="members" id="1" value="1" required checked>
+        <label for="1"><span class="radio">1 (Myself Only)</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="members" id="2" value="2">
+        <label for="2"><span class="radio">2</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="members" id="3" value="3">
+        <label for="3"><span class="radio">3</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="members" id="4" value="4">
+        <label for="4"><span class="radio">4</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="members" id="5" value="5">
+        <label for="5"><span class="radio">5</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="members" id="6" value="6">
+        <label for="6"><span class="radio">6+</span></label>
+      </div>
+      <br>
+
+      <p>Child's Race/Ethnicity</p>
+      <div class="container">
+        <input type="radio" name="race" id="black" value="black" checked required>
+        <label for="black"><span class="radio">African-American/Black</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="race" id="asian-pacific" value="asian-pacific">
+        <label for="asian-pacific"><span class="radio">Asian/Pacific Islander</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="race" id="white" value="white">
+        <label for="white"><span class="radio">Caucasian</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="race" id="hispanic" value="hispanic">
+        <label for="hispanic"><span class="radio">Hispanic/Latino(a)</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="race" id="middle-east" value="middle-east">
+        <label for="middle-east"><span class="radio">Middle Eastern</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="race" id="native-american" value="native-american">
+        <label for="native-american"><span class="radio">Native American</span></label>
+      </div>
+      <br>
+
+      <p>Emergency Contact Name</p>
+      <input type="text"
+             id="emergencyName"
+             placeholder="Jane Doe"
+             required/>
+      <br>
+
+      <p>Emergency Contact Phone Number</p>
+      <input type="text"
+             id="emergencyPhone"
+             placeholder="(800) 555 - 0002"
+             required/>
+      <br>
+
+      <p>Emergency Contact Relationship to Student</p>
+      <input type="text"
+             id="emergencyRelationship"
+             placeHolder="Aunt"
+             required/>
+      <br>
+
+      <p>Does the Student have any food allergies?</p>
+      <input type="text"
+             id="allergy"
+             placeHolder="None"/>
+
+      <p>Does the Student have any other Medical Conditions?</p>
+      <input type="text"
+             id="medical"
+             placeHolder="None"/>
+      <br>
+
+      <p>Uniform Size</p>
+      <div class="container">
+        <input type="radio" name="uniform" id="XS" value="XS" required>
+        <label for="XS"><span class="radio">XS</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="uniform" id="S" value="S">
+        <label for="S"><span class="radio">S</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="uniform" id="M" value="M" checked>
+        <label for="M"><span class="radio">M</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="uniform" id="L" value="L">
+        <label for="L"><span class="radio">L</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="uniform" id="XL" value="XL">
+        <label for="XL"><span class="radio">XL</span></label>
+      </div>
+      <br>
+
+      <p>How did you hear about us?</p>
+      <div class="container">
+        <input type="radio" name="referral" id="flyer" value="flyer" checked >
+        <label for="flyer"><span class="radio">Flyer</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="nycha" value="nycha">
+        <label for="nycha"><span class="radio">NYCHA</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="social" value="social">
+        <label for="social"><span class="radio">Social Media</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="bbbs" value="bbbs">
+        <label for="bbbs"><span class="radio">Big Brothers Big Sisters</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="word" value="word">
+        <label for="word"><span class="radio">Word of Mouth</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="other" value="other">
+        <label for="other"><span class="radio">Other</span></label>
+      </div>
+      <br>
+
+      <p>If you selected "Other" above, please explain</p>
+      <input type="text"
+             id="referralOther"
+             placeHolder="I heard about KCTL from..."/>
+      <br>
+
+      <br>
+      <br>
+      <div class="container">
+        <input type="checkbox" name="terms" id="terms" required checked>
+        <label for="terms">
+          <span class="checkbox">
+            I Agree to the
+            <a href="https://drive.google.com/file/d/0B0Vuk8XcPJqqUjBtSnhXZE1CdUE/view">
+              Student Release Form and Liability Waiver
+            </a>
+          </span>
+        </label>
+      </div> -->
+
+      <br>
+      <input type="submit"
+             name="submit"/>
+    </form>
+  </div>
+</template>
+
