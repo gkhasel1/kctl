@@ -10,13 +10,29 @@ TODO
 IMPROVEMENTS
 =============
  - radio/checkbox label align
- - mobile sizing and viewability (could just zoom tho?)
  - better validation of registration forms (emails, phone numbers, etc.)
  - get rid of hardcoded CURRENT_SEASON value
- - use reg to populate attendance
+ - use reg to populate attendance (right now uses user court field...)
  - need some kind of start new season button that resets student.court and CURRENT_SEASON etc.
  - hide the management buttons (attendance, data, roster, edit person etc.) unless a password is entered on the options page
  - season and court data as fixtures?
  - student surveys/homework?
 
  - [!!!!!!!!!!!!!] Split reg into creating new Student/Volunteer then setting up a registration record? Would make it easier for returning registrations?
+
+
+REGISTRATION:::::
+
+When do you want to volunteer? *
+    Summer Season 2017 (June 3 - September 23); Saturday afternoons
+    Fall Season 2017 (September 25 - November 4); Mondays-Thursdays at 3:45 PM
+    Winter Season 2018 (February - April on Saturdays, Dates TBA)
+If interested in the Summer season, what is your preferred housing development site? *
+    Choose
+Which Summer training session will you attend? *
+    Choose
+Can you volunteer at any Summer Season Play Days? Select as many as you'd like.
+    Saturday, May 6 - Sumner - 1pm-3pm
+    Saturday, May 13 - Tompkins - 1pm-3pm
+    Saturday, May 20 - Jackie Robinson - 1pm-3pm
+    Saturday, May 27 - Lafayette Gardens - 1pm-3pm

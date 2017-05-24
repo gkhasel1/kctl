@@ -28,6 +28,10 @@
         <input type="radio" name="gender" id="female" value="female">
         <label for="female"><span class="radio">Female</span></label>
       </div>
+      <div class="container">
+        <input type="radio" name="gender" id="none" value="none">
+        <label for="none"><span class="radio">N/A</span></label>
+      </div>
       <br>
 
       <p>Date of Birth</p>
@@ -228,89 +232,89 @@
              required/>
       <br>
 
-     <!--  <p>Do you or your child live in {{courtName}} Houses?</p>
-      <div class="container">
-        <input type="radio" name="housing" id="both" value="both" required checked>
-        <label for="both"><span class="radio">Yes, both my child and I live in {{courtName}} Houses</span></label>
-      </div>
-      <div class="container">
-        <input type="radio" name="housing" id="child" value="child">
-        <label for="child"><span class="radio">Yes, my child lives in {{courtName}} Houses, but I do not</span></label>
-      </div>
-      <div class="container">
-        <input type="radio" name="housing" id="parent" value="parent">
-        <label for="parent"><span class="radio">Yes, I live in {{courtName}} Houses without my child</span></label>
-      </div>
-      <div class="container">
-        <input type="radio" name="housing" id="neither" value="neither">
-        <label for="neither"><span class="radio">No, neither my child nor I live in {{courtName}} Houses</span></label>
-      </div>
-      <br>
-
-      <p>If "No", do you and/or your child live in a NYCHA housing development other than {{courtName}}?</p>
-      <div class="container">
-        <input type="radio" name="otherHousing" id="yes" value="yes">
-        <label for="yes"><span class="radio">Yes</span></label>
-      </div>
-      <div class="container">
-        <input type="radio" name="otherHousing" id="no" value="no">
-        <label for="no"><span class="radio">No</span></label>
-      </div>
-      <br>
-
-      <p>If "Yes", to the above, provide the name of the development here.</p>
+      <p>City</p>
       <input type="text"
-             id="otherHousingName"
-             placeholder="Name"/>
+             name="city"
+             placeholder="New York"
+             required/>
       <br>
 
-      <p>Which category describes your annual household income?</p>
-      <div class="container">
-        <input type="radio" name="income" id="25below" value="25below" required checked>
-        <label for="25below"><span class="radio">$24,999 or below</span></label>
-      </div>
-      <div class="container">
-        <input type="radio" name="income" id="25to50" value="25to50">
-        <label for="25to50"><span class="radio">$25,000 to $49,999</span></label>
-      </div>
-      <div class="container">
-        <input type="radio" name="income" id="50to75" value="50to75">
-        <label for="50to75"><span class="radio">$50,000 to $74,999</span></label>
-      </div>
-      <div class="container">
-        <input type="radio" name="income" id="75above" value="75above">
-        <label for="75above"><span class="radio">$75,000 or more</span></label>
-      </div>
+      <p>State</p>
+      <input type="text"
+             name="state"
+             placeholder="New York"
+             required/>
       <br>
 
-      <p>How many members are part of your household?</p>
+      <p>Zip</p>
+      <input type="text"
+             name="zip"
+             placeholder="10001"
+             required/>
+      <br>
+
+     <p>Which Borough do you reside in?</p>
       <div class="container">
-        <input type="radio" name="members" id="1" value="1" required checked>
-        <label for="1"><span class="radio">1 (Myself Only)</span></label>
+        <input type="radio" name="borough" id="manhattan" value="manhattan" required checked>
+        <label for="manhattan"><span class="radio">Manhattan</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="members" id="2" value="2">
-        <label for="2"><span class="radio">2</span></label>
+        <input type="radio" name="borough" id="brooklyn" value="brooklyn">
+        <label for="brooklyn"><span class="radio">Brooklyn</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="members" id="3" value="3">
-        <label for="3"><span class="radio">3</span></label>
+        <input type="radio" name="borough" id="queens" value="queens">
+        <label for="queens"><span class="radio">Queens</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="members" id="4" value="4">
-        <label for="4"><span class="radio">4</span></label>
+        <input type="radio" name="borough" id="bronx" value="bronx">
+        <label for="bronx"><span class="radio">Bronx</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="members" id="5" value="5">
-        <label for="5"><span class="radio">5</span></label>
+        <input type="radio" name="borough" id="si" value="si">
+        <label for="si"><span class="radio">Staten Island</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="members" id="6" value="6">
-        <label for="6"><span class="radio">6+</span></label>
+        <input type="radio" name="borough" id="none" value="none">
+        <label for="none"><span class="radio">I do not live in the boroughs</span></label>
       </div>
       <br>
 
-      <p>Child's Race/Ethnicity</p>
+      <p>Highest Degree Completed</p>
+      <div class="container">
+        <input type="radio" name="degree" id="lesshs" value="lesshs" required checked>
+        <label for="lesshs"><span class="radio">Have not finished High School</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="degree" id="hs" value="hs">
+        <label for="hs"><span class="radio">High School Diploma</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="degree" id="associates" value="associates">
+        <label for="associates"><span class="radio">Associates</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="degree" id="bachelors" value="bachelors">
+        <label for="bachelors"><span class="radio">Bachelors</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="degree" id="masters" value="masters">
+        <label for="masters"><span class="radio">Masters</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="degree" id="doctorate" value="doctorate">
+        <label for="doctorate"><span class="radio">Doctorate</span></label>
+      </div>
+      <br>
+
+      <p>Highest Degree Completed: Name of School</p>
+      <input type="text"
+             name="school"
+             placeholder="{{courtName}} University"
+             required/>
+      <br>
+
+      <p>Race/Ethnicity</p>
       <div class="container">
         <input type="radio" name="race" id="black" value="black" checked required>
         <label for="black"><span class="radio">African-American/Black</span></label>
@@ -337,81 +341,117 @@
       </div>
       <br>
 
-      <p>Emergency Contact Name</p>
+      <p>Occupation</p>
       <input type="text"
-             id="emergencyName"
-             placeholder="Jane Doe"
+             name="occupation"
+             placeholder="Tennis Player"
              required/>
       <br>
 
-      <p>Emergency Contact Phone Number</p>
+      <p>Job Title</p>
       <input type="text"
-             id="emergencyPhone"
-             placeholder="(800) 555 - 0002"
+             name="jobTitle"
+             placeholder="Professional"
              required/>
       <br>
 
-      <p>Emergency Contact Relationship to Student</p>
+      <p>Current Employer</p>
       <input type="text"
-             id="emergencyRelationship"
-             placeHolder="Aunt"
+             name="employer"
+             placeholder="KCTL"
              required/>
       <br>
 
-      <p>Does the Student have any food allergies?</p>
-      <input type="text"
-             id="allergy"
-             placeHolder="None"/>
-
-      <p>Does the Student have any other Medical Conditions?</p>
-      <input type="text"
-             id="medical"
-             placeHolder="None"/>
-      <br>
-
-      <p>Uniform Size</p>
+      <p>How do you want to be involved?</p>
       <div class="container">
-        <input type="radio" name="uniform" id="XS" value="XS" required>
-        <label for="XS"><span class="radio">XS</span></label>
+        <input type="checkbox" name="involvementPref" id="teach" value="teaching">
+        <label for="teach"><span class="checkbox">Teaching Tennis</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="uniform" id="S" value="S">
-        <label for="S"><span class="radio">S</span></label>
+        <input type="checkbox" name="involvementPref" id="curriculum" value="curriculum">
+        <label for="curriculum"><span class="checkbox">Curriculum/Education</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="uniform" id="M" value="M" checked>
-        <label for="M"><span class="radio">M</span></label>
+        <input type="checkbox" name="involvementPref" id="photo" value="photo">
+        <label for="photo"><span class="checkbox">Photography/Videography</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="uniform" id="L" value="L">
-        <label for="L"><span class="radio">L</span></label>
+        <input type="checkbox" name="involvementPref" id="fundraising" value="fundraising">
+        <label for="fundraising"><span class="checkbox">Fundrasing Campaigns/Events</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="uniform" id="XL" value="XL">
-        <label for="XL"><span class="radio">XL</span></label>
+        <input type="checkbox" name="involvementPref" id="donor" value="donor">
+        <label for="donor"><span class="checkbox">Donor Engagement</span></label>
       </div>
-      <br>
+      <div class="container">
+        <input type="checkbox" name="involvementPref" id="grants" value="grants">
+        <label for="grants"><span class="checkbox">Grant Writing</span></label>
+      </div>
+      <div class="container">
+        <input type="checkbox" name="involvementPref" id="web" value="web">
+        <label for="web"><span class="checkbox">Design/Software</span></label>
+      </div>
+      <div class="container">
+        <input type="checkbox" name="involvementPref" id="finance" value="finance">
+        <label for="finance"><span class="checkbox">Finance/Legal/Compliance</span></label>
+      </div>
+      <div class="container">
+        <input type="checkbox" name="involvementPref" id="data" value="data">
+        <label for="data"><span class="checkbox">Data Analytics</span></label>
+      </div>
+      <div class="container">
+        <input type="checkbox" name="involvementPref" id="marketing" value="marketing">
+        <label for="marketing"><span class="checkbox">Marketing/Publicity</span></label>
+      </div>
+      <div class="container">
+        <input type="checkbox" name="involvementPref" id="community" value="community">
+        <label for="community"><span class="checkbox">Community Partnerships</span></label>
+      </div>
 
       <p>How did you hear about us?</p>
       <div class="container">
-        <input type="radio" name="referral" id="flyer" value="flyer" checked >
-        <label for="flyer"><span class="radio">Flyer</span></label>
+        <input type="radio" name="referral" id="meetup" value="meetup" required >
+        <label for="meetup"><span class="radio">Meetup</span></label>
       </div>
       <div class="container">
-        <input type="radio" name="referral" id="nycha" value="nycha">
-        <label for="nycha"><span class="radio">NYCHA</span></label>
-      </div>
-      <div class="container">
-        <input type="radio" name="referral" id="social" value="social">
-        <label for="social"><span class="radio">Social Media</span></label>
-      </div>
-      <div class="container">
-        <input type="radio" name="referral" id="bbbs" value="bbbs">
-        <label for="bbbs"><span class="radio">Big Brothers Big Sisters</span></label>
+        <input type="radio" name="referral" id="google" value="google">
+        <label for="google"><span class="radio">Google</span></label>
       </div>
       <div class="container">
         <input type="radio" name="referral" id="word" value="word">
         <label for="word"><span class="radio">Word of Mouth</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="flyer" value="flyer">
+        <label for="flyer"><span class="radio">Flyer</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="facebook" value="facebook">
+        <label for="facebook"><span class="radio">Facebook</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="twitter" value="twitter">
+        <label for="twitter"><span class="radio">Twitter</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="linkedin" value="linkedin">
+        <label for="linkedin"><span class="radio">LinkedIn</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="idealist" value="idealist">
+        <label for="idealist"><span class="radio">Idealist</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="volunteermatch" value="volunteermatch">
+        <label for="volunteermatch"><span class="radio">VolunteerMatch</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="NYCService" value="NYCService">
+        <label for="NYCService"><span class="radio">NYC Service</span></label>
+      </div>
+      <div class="container">
+        <input type="radio" name="referral" id="allforgood" value="allforgood">
+        <label for="allforgood"><span class="radio">All For Good</span></label>
       </div>
       <div class="container">
         <input type="radio" name="referral" id="other" value="other">
@@ -425,23 +465,17 @@
              placeHolder="I heard about KCTL from..."/>
       <br>
 
+      <p>Tell us more!</p>
+      <input type="text"
+             id="more"
+             placeHolder="..."/>
       <br>
-      <br>
-      <div class="container">
-        <input type="checkbox" name="terms" id="terms" required checked>
-        <label for="terms">
-          <span class="checkbox">
-            I Agree to the
-            <a href="https://drive.google.com/file/d/0B0Vuk8XcPJqqUjBtSnhXZE1CdUE/view">
-              Student Release Form and Liability Waiver
-            </a>
-          </span>
-        </label>
-      </div> -->
 
       <br>
+      <br>
       <input type="submit"
-             name="submit"/>
+             name="submit"
+             value="Next"/>
     </form>
   </div>
 </template>
