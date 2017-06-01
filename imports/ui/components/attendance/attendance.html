@@ -12,7 +12,7 @@
       {{#if students.count}}
         {{#each students}}
         <div class="container">
-          <input type="checkbox" class="attendance-check" name="student" id="{{ _id }}" checked="{{ attending(_id) }}">
+          <input type="checkbox" class="student-check" name="student" id="{{ _id }}" checked="{{ attendingStudent(_id) }}">
           <label for="{{ _id }}">
             <span class="checkbox">{{ capitalize(firstName) }} {{ capitalize(lastName) }}</span>
           </label>
@@ -21,6 +21,24 @@
         {{/each}}
       {{else}}
         <p style="font-size:14px">No Students Registered</p>
+      {{/if}}
+
+      <br>
+      <br>
+
+      <p>Volunteers</p>
+      {{#if volunteers.count}}
+        {{#each volunteers}}
+        <div class="container">
+          <input type="checkbox" class="volunteer-check" name="volunteer" id="{{ _id }}" checked="{{ attendingVolunteer(_id) }}">
+          <label for="{{ _id }}">
+            <span class="checkbox">{{ capitalize(firstName) }} {{ capitalize(lastName) }}</span>
+          </label>
+        </div>
+        <br>
+        {{/each}}
+      {{else}}
+        <p style="font-size:14px">No Volunteers Registered</p>
       {{/if}}
 
       <br>

@@ -1,0 +1,149 @@
+<template name="kctldata">
+  <h1>Kings County Tennis League</h1>
+  <br>
+
+  <h2>Reference</h2>
+
+  <p style="font-size:14px">There are currently 4 collections in the DB.</p>
+
+  <p style="font-size:14px">&emsp;STUDENTS -- the student entities,
+     unique by first, last, dob, parent email</p>
+  <p style="font-size:14px">&emsp;VOLUNTEERS -- the volunteer entities,
+     unique by first, last, dob, email</p>
+  <p style="font-size:14px">&emsp;REGISTRATIONS -- reg records that pnk a student/volunteer ids
+     to a season (hardcoded keyword i.e. summer2017),
+     unique by entityId (of student or volunteer), court, season</p>
+  <p style="font-size:14px">&emsp;ATTENDANCE -- psts of student/volunteer ids pnked to court, date, and season
+     unique by court, date (per day)</p>
+  <br>
+
+  <h2>Data</h2>
+  <br>
+
+  <h3>Students: {{students.count}}</h3>
+  {{#if students.count}}
+  <div class="container">
+    <ul>
+      {{#each students}}
+        <p>{{ firstName }} {{ lastName}} [ {{ _id }} ]</p>
+        {{> student}}
+      {{/each}}
+    </ul>
+  </div>
+  {{/if}}
+  <br>
+  <br>
+
+  <h3>Volunteers: {{volunteers.count}}</h3>
+  {{#if volunteers.count}}
+  <div class="container">
+    <ul>
+      {{#each volunteers}}
+        <p>{{ firstName }} {{ lastName}} [ {{ _id }} ]</p>
+        {{> volunteer}}
+      {{/each}}
+    </ul>
+  </div>
+  {{/if}}
+  <br>
+  <br>
+
+  <h3>attendance: {{attendance.count}}</h3>
+  {{#if attendance.count}}
+  <div class="container">
+    <ul>
+      {{#each attendance}}
+        <p>{{ court }} {{ date }} [ {{ _id }} ]</p>
+        {{> attend}}
+      {{/each}}
+    </ul>
+  </div>
+  {{/if}}
+  <br>
+  <br>
+
+  <h3>Registrations: {{registrations.count}} (this should match students + volunteers)</h3>
+  {{#if registrations.count}}
+  <div class="container">
+    <ul>
+      {{#each registrations}}
+        <p>[ {{ _id }} ]</p>
+        {{> registration}}
+      {{/each}}
+    </ul>
+  </div>
+  {{/if}}
+  <br>
+  <br>
+</template>
+
+
+<template name="student">
+  <p style="font-size:12px">court: {{court}}</p>
+  <p style="font-size:12px">createdAt: {{createdAt}}</p>
+  <p style="font-size:12px">firstName: {{firstName}}</p>
+  <p style="font-size:12px">lastName: {{lastName}}</p>
+  <p style="font-size:12px">gender: {{gender}}</p>
+  <p style="font-size:12px">dob: {{dob}}</p>
+  <p style="font-size:12px">parentName: {{parentName}}</p>
+  <p style="font-size:12px">parentEmail: {{parentEmail}}</p>
+  <p style="font-size:12px">parentPrimaryPhone: {{parentPrimaryPhone}}</p>
+  <p style="font-size:12px">parentSecondaryPhone: {{parentSecondaryPhone}}</p>
+  <p style="font-size:12px">parentAddress: {{parentAddress}}</p>
+  <p style="font-size:12px">housing: {{housing}}</p>
+  <p style="font-size:12px">otherHousing: {{otherHousing}}</p>
+  <p style="font-size:12px">otherHousingName: {{otherHousingName}}</p>
+  <p style="font-size:12px">income: {{income}}</p>
+  <p style="font-size:12px">members: {{members}}</p>
+  <p style="font-size:12px">race: {{race}}</p>
+  <p style="font-size:12px">emergencyName: {{emergencyName}}</p>
+  <p style="font-size:12px">emergencyPhone: {{emergencyPhone}}</p>
+  <p style="font-size:12px">emergencyRelationship: {{emergencyRelationship}}</p>
+  <p style="font-size:12px">allergy: {{allergy}}</p>
+  <p style="font-size:12px">medical: {{medical}}</p>
+  <p style="font-size:12px">uniform: {{uniform}}</p>
+  <p style="font-size:12px">referral: {{referral}}</p>
+  <p style="font-size:12px">referralOther: {{referralOther}}</p>
+</template>
+
+<template name="volunteer">
+  <p style="font-size:12px">court: {{ court }}</p>
+  <p style="font-size:12px">firstName: {{ firstName }}</p>
+  <p style="font-size:12px">lastName: {{ lastName }}</p>
+  <p style="font-size:12px">gender: {{ gender }}</p>
+  <p style="font-size:12px">dob: {{ dob }}</p>
+  <p style="font-size:12px">email: {{ email }}</p>
+  <p style="font-size:12px">phone: {{ phone }}</p>
+  <p style="font-size:12px">street: {{ street }}</p>
+  <p style="font-size:12px">city: {{ city }}</p>
+  <p style="font-size:12px">state: {{ state }}</p>
+  <p style="font-size:12px">zip: {{ zip }}</p>
+  <p style="font-size:12px">borough: {{ borough }}</p>
+  <p style="font-size:12px">degree: {{ degree }}</p>
+  <p style="font-size:12px">school: {{ school }}</p>
+  <p style="font-size:12px">race: {{ race }}</p>
+  <p style="font-size:12px">occupation: {{ occupation }}</p>
+  <p style="font-size:12px">jobTitle: {{ jobTitle }}</p>
+  <p style="font-size:12px">employer: {{ employer }}</p>
+  <p style="font-size:12px">involvement: {{ involvement }}</p>
+  <p style="font-size:12px">referral: {{ referral }}</p>
+  <p style="font-size:12px">referralOther: {{ referralOther }}</p>
+  <p style="font-size:12px">more: {{ more }}</p>
+  <p style="font-size:12px">createdAt: {{ createdAt }}</p>
+</template>
+
+<template name="attend">
+  <p style="font-size:12px">court: {{ court }}</p>
+  <p style="font-size:12px">studentIds: {{ studentIds }}</p>
+  <p style="font-size:12px">volunteerIds: {{ volunteerIds }}</p>
+  <p style="font-size:12px">createdAt: {{ createdAt }}</p>
+  <p style="font-size:12px">date: {{ date }}</p>
+</template>
+
+<template name="registration">
+  <p style="font-size:12px">court: {{ court }}</p>
+  <p style="font-size:12px">entityRole: {{ entityRole }}</p>
+  <p style="font-size:12px">entityId: {{ entityId }}</p>
+  <p style="font-size:12px">createdAt: {{ createdAt }}</p>
+  <p style="font-size:12px">season: {{ season }}</p>
+</template>

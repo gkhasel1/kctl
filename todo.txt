@@ -7,6 +7,8 @@ TODO
 [7] homework
 [8] accounts?
 
+[9] super secret data read page
+
 IMPROVEMENTS
 =============
  - radio/checkbox label align
@@ -19,6 +21,8 @@ IMPROVEMENTS
  - student surveys/homework?
 
  - [!!!!!!!!!!!!!] Split reg into creating new Student/Volunteer then setting up a registration record? Would make it easier for returning registrations?
+
+ - when someone reregisters we will have to set the `court` in the student/volunteer record to have them populate in attendance
 
 
 REGISTRATION:::::

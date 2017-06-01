@@ -21,6 +21,7 @@ Template.newStudent.events({
     var target = event.target;
     var student = {
       "court": court,
+      "createdAt": new Date(),
       "firstName": target.firstName.value,
       "lastName": target.lastName.value,
       "gender": target.gender.value,
@@ -62,7 +63,7 @@ Template.newStudent.events({
             alert("Error: Failed to register student");
           } else {
             console.log("result-reg:", result);
-            FlowRouter.go("/" + court);
+            FlowRouter.go("/court/" + court);
           }
         });
       }

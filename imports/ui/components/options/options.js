@@ -20,6 +20,6 @@ Template.options.events({
   'click .option-button': function(event){
     var courtName = FlowRouter.getParam('courtName');
     var action = event.target.id;
-    FlowRouter.go("/" + courtName + "/" + action);
+    FlowRouter.go("/court/" + courtName + "/" + action);
   }
 });

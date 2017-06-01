@@ -7,6 +7,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 
 Template.newVolunteer.onCreated(function newVolunteerOnCreated() {
   court = FlowRouter.getParam('courtName');
+  Session.set("involvement", []);
 });
 
 Template.newVolunteer.helpers({
@@ -16,6 +17,16 @@ Template.newVolunteer.helpers({
 });
 
 Template.newVolunteer.events({
+  'click .involvement-check'(event){
+    var involvementSelections = Session.get("involvement");
+    var selection = event.target.value;
+    if (event.target.checked) {
+      involvementSelections.push(selection);
+    } else {
+      involvementSelections.splice(involvementSelections.indexOf(selection), 1);
+    }
+    Session.set("involvement", involvementSelections);
+  },
   'submit .register-volunteer'(event, template) {
     event.preventDefault();
     var target = event.target;
@@ -27,27 +38,26 @@ Template.newVolunteer.events({
       "dob": target.day.value + "-" + target.month.value + "-" + target.year.value,
       "email": target.email.value,
       "phone": target.phone.value.replace(/\D/g,''),
-      // "parentSecondaryPhone": target.parentSecondaryPhone.value.replace(/\D/g,''),
-      // "parentAddress": target.parentAddress.value,
-      // "housing": target.housing.value,
-      // "otherHousing": target.otherHousing.value,
-      // "otherHousingName": target.otherHousingName.value,
-      // "income": target.income.value,
-      // "members": target.members.value,
-      // "race": target.race.value,
-      // "emergencyName": target.emergencyName.value,
-      // "emergencyPhone": target.emergencyPhone.value.replace(/\D/g,''),
-      // "emergencyRelationship": target.emergencyRelationship.value,
-      // "allergy": target.allergy.value,
-      // "medical": target.medical.value,
-      // "uniform": target.uniform.value,
-      // "referral": target.referral.value,
-      // "referralOther": target.referralOther.value,
+      "street": target.street.value,
+      "city": target.city.value,
+      "state": target.state.value,
+      "zip": target.zip.value,
+      "borough": target.borough.value,
+      "degree": target.degree.value,
+      "school": target.school.value,
+      "race": target.race.value,
+      "occupation": target.occupation.value,
+      "jobTitle": target.jobTitle.value,
+      "employer": target.employer.value,
+      "involvement": Session.get("involvement"),
+      "referral": target.referral.value,
+      "referralOther": target.referralOther.value,
+      "more": target.more.value,
+      "createdAt": new Date(),
     };
 
-    console.log(volunteer);
-
     Meteor.call('volunteers.insert', volunteer, (error, result) => {
+      console.log(volunteer);
       if (error) {
         console.log(error);
         alert("Error: Failed to create volunteer");
@@ -61,7 +71,7 @@ Template.newVolunteer.events({
             alert("Error: Failed to register volunteer");
           } else {
             console.log("result-reg:", result);
-            FlowRouter.go("/" + court);
+            FlowRouter.go("/court/" + court);
           }
         });
       }

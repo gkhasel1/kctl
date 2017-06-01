@@ -19,6 +19,10 @@ export const AttendanceSchema = new SimpleSchema({
     type: [String],
     label: "Student Ids",
   },
+  volunteerIds: {
+    type: [String],
+    label: "Volunteer Ids",
+  },
   court: {
     type: String,
     label: "Court",

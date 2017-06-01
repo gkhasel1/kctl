@@ -5,9 +5,10 @@ import { Attendance, AttendanceSchema } from './attendance.js';
 Attendance._ensureIndex({date: 1, court: 1}, {unique: 1});
 
 Meteor.methods({
-  'attendance.upsert'(court, studentIds) {
+  'attendance.upsert'(court, studentIds, volunteerIds) {
     var data = {
       studentIds: studentIds,
+      volunteerIds: volunteerIds,
       court: court,
       date: new Date().toDateString(),
       createdAt: new Date(),
