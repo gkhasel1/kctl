@@ -3,19 +3,15 @@
   <br>
 
   <h2>Reference</h2>
-
-  <p style="font-size:14px">There are currently 4 collections in the DB.</p>
-
-  <p style="font-size:14px">&emsp;STUDENTS -- the student entities,
-     unique by first, last, dob, parent email</p>
-  <p style="font-size:14px">&emsp;VOLUNTEERS -- the volunteer entities,
-     unique by first, last, dob, email</p>
-  <p style="font-size:14px">&emsp;REGISTRATIONS -- reg records that pnk a student/volunteer ids
-     to a season (hardcoded keyword i.e. summer2017),
-     unique by entityId (of student or volunteer), court, season</p>
-  <p style="font-size:14px">&emsp;ATTENDANCE -- psts of student/volunteer ids pnked to court, date, and season
-     unique by court, date (per day)</p>
-  <br>
+  <div class="container">
+    <h3 style="font-size:14px">There are currently 4 collections in the DB.</h3>
+    <p style="font-size:14px">&emsp;STUDENTS -- student entities created via reg, records are unique by first, last, dob, parent email</p>
+    <p style="font-size:14px">&emsp;VOLUNTEERS -- volunteer entities created via reg,  records are unique by first, last, dob, email</p>
+    <p style="font-size:14px">&emsp;REGISTRATIONS -- registration records that link a student/volunteer ids
+       to a season (hardcoded keyword i.e. summer2017), must be at least as much as student + volunteer, records are unique by entityId (of student or volunteer), court, season</p>
+    <p style="font-size:14px">&emsp;ATTENDANCE -- csv lists of student/volunteer ids as well as court, date, and season when attendance was taken, records are unique by court, date (per day)</p>
+    <br>
+  </div>
 
   <h2>Data</h2>
   <br>
@@ -25,7 +21,8 @@
   <div class="container">
     <ul>
       {{#each students}}
-        <p>{{ firstName }} {{ lastName}} [ {{ _id }} ]</p>
+        <p>{{ firstName }} {{ lastName}}</p>
+        <p>[ {{ _id }} ]</p>
         {{> student}}
       {{/each}}
     </ul>
@@ -39,7 +36,8 @@
   <div class="container">
     <ul>
       {{#each volunteers}}
-        <p>{{ firstName }} {{ lastName}} [ {{ _id }} ]</p>
+        <p>{{ firstName }} {{ lastName}}</p>
+        <p>[ {{ _id }} ]</p>
         {{> volunteer}}
       {{/each}}
     </ul>
@@ -53,7 +51,8 @@
   <div class="container">
     <ul>
       {{#each attendance}}
-        <p>{{ court }} {{ date }} [ {{ _id }} ]</p>
+        <p>{{ court }} {{ date }}</p>
+        <p>[ {{ _id }} ]</p>
         {{> attend}}
       {{/each}}
     </ul>
@@ -62,7 +61,8 @@
   <br>
   <br>
 
-  <h3>Registrations: {{registrations.count}} (this should match students + volunteers)</h3>
+  <h3>Registrations: {{registrations.count}}</h3>
+  <p>(this should be at least students + volunteers)</p>
   {{#if registrations.count}}
   <div class="container">
     <ul>
@@ -76,7 +76,6 @@
   <br>
   <br>
 </template>
-
 
 <template name="student">
   <p style="font-size:12px">court: {{court}}</p>
