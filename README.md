@@ -1,16 +1,24 @@
-KCTL website.
-Please visit kctl.us or contact gkhasel1@gmail.com for more info.
+# KCTL
+The website for the Kings Country Tennis League.
 
-DEV
+Please visit http://kctl.us or contact gkhasel1@gmail.com for more info.
 
-`meteor up`
+## Development
 
-DEPLOY
+Uses common Meteor development techniques. Generally, have meteor setup and run `meteor up` to get started.
 
-`cd .deploy`
-`mup setup`
-`mup deploy`
+## Deployment
 
-Code lives on AWS server
+Uses `mup` an NPM package designed for Meteor applications. The following procedure will get you started once the `mup.js` file is configured properly.
 
-DNS record is an A record in GoDaddy DNS management settings.
+```
+cd .deploy
+mup setup
+mup deploy
+```
+
+## Misc
+
+Code lives on an AWS server currently operated by GK.
+
+DNS record is an A record in GoDaddy DNS management settings currently owned by GK.
