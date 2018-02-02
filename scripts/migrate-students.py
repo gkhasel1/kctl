@@ -5,7 +5,8 @@ import os
 from pymongo import MongoClient
 
 filename = "2018-winter-students.csv"
-
+season = "winter"
+program = "after-school"
 columns = [
     "Timestamp",
     "Email Address",
@@ -24,4 +25,15 @@ columns = [
 
 with open(filename) as f:
     for i, line in enumerate(f):
-        print "line {0} = {1}".format(i, line.split())
+        print("line {0} = {1}".format(i, line.split(",")))
+        student = {
+            "season": season,
+            "program": program,
+            # site
+            "parentEmail": line[1],
+            "firstName": line[2].split()[:-1],
+            "lastName": line[2].split()[-1],
+            # address
+            "dob": line[4].replace("/", "-"),
+
+        }
