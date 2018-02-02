@@ -1,22 +1,36 @@
 <template name="courts">
+
   <h1>Kings County Tennis League</h1>
+
   <div class="wrap">
-    <div class="court-button-holder">
-      <div class="court-button">
-        <img src="img/kctl/jr_thumb.png" id="robinson">
-      </div>
-      <div class="court-button">
-        <img src="img/kctl/lg_thumb.png" id="lafayette">
-      </div>
-      <div class="court-button">
-        <img src="img/kctl/marcy_thumb.png" id="marcy">
-      </div>
-      <div class="court-button">
-        <img src="img/kctl/sumner_thumb.png" id="sumner">
-      </div>
-      <div class="court-button">
-        <img src="img/kctl/tompkins_thumb.png" id="tompkins">
-      </div>
-    </div>
+    <p>Season</p>
+    <select id="season-select">
+      <option disabled="disabled" selected="selected">Season</option>
+      {{#each seasons}}
+        <option value="{{this}}">{{this}}</option>
+      {{/each}}
+    </select>
+
+    <p>Program</p>
+    <select id="program-select">
+      <option disabled="disabled" selected="selected">Program</option>
+      {{#each programs}}
+        <option value="{{this}}">{{this}}</option>
+      {{/each}}
+    </select>
+
+    <p>Site</p>
+    <select id="site-select">
+      <option disabled="disabled" selected="selected">Site</option>
+      {{#each sites}}
+        <option value="{{this}}">{{this}}</option>
+      {{/each}}
+    </select>
+
+    <br>
+    <br>
+    <button class="option-button" id="start-button">Start</button>
+    <br>
+
   </div>
 </template>

@@ -10,6 +10,18 @@ Students.allow({
 });
 
 export const StudentSchema = new SimpleSchema({
+  season: {
+    label: "Season student is playing in.",
+    type: String,
+  },
+  program: {
+    label: "Program student is playing in.",
+    type: String,
+  },
+  site: {
+    label: "Site student is playing in.",
+    type: String,
+  },
   firstName: {
     label: "Students first name",
     type: String,
@@ -117,10 +129,5 @@ export const StudentSchema = new SimpleSchema({
   createdAt: {
     label: "Datetime that student was created",
     type: Date,
-  },
-  court: {
-    label: "Court student is playing on.",
-    type: String,
-    allowedValues: ['marcy', 'sumner', 'robinson', 'lafayette', 'tompkins'],
   },
 });

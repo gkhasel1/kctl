@@ -10,6 +10,18 @@ Attendance.allow({
 });
 
 export const AttendanceSchema = new SimpleSchema({
+  season: {
+    label: "Season.",
+    type: String,
+  },
+  program: {
+    label: "Program.",
+    type: String,
+  },
+  site: {
+    label: "Site.",
+    type: String,
+  },
   date: {
     type: String,
     label: "Date",
@@ -22,10 +34,6 @@ export const AttendanceSchema = new SimpleSchema({
   volunteerIds: {
     type: [String],
     label: "Volunteer Ids",
-  },
-  court: {
-    type: String,
-    label: "Court",
   },
   createdAt: {
     type: Date,

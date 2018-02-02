@@ -3,10 +3,6 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 export const Registrations = new Mongo.Collection('registrations');
 
-// WARNING: Change this when a new season starts or else
-//          registrations will be for the wrong season!
-export const CURRENT_SEASON = "summer2017";
-
 Registrations.allow({
   insert() { return true; },
   update() { return true; },
@@ -18,6 +14,14 @@ export const RegistrationsSchema = new SimpleSchema({
     type: String,
     label: "Season of registration",
   },
+  program: {
+    type: String,
+    label: "program of registration",
+  },
+  site: {
+    type: String,
+    label: "site of registration",
+  },
   entityId: {
     type: String,
     label: "Id of student or volunteer",
@@ -26,11 +30,6 @@ export const RegistrationsSchema = new SimpleSchema({
     type: String,
     label: "Role of person registering",
     allowedValues: ['student', 'volunteer'],
-  },
-  court: {
-    type: String,
-    label: "Court",
-    allowedValues: ['marcy', 'sumner', 'robinson', 'lafayette', 'tompkins'],
   },
   createdAt: {
     type: Date,

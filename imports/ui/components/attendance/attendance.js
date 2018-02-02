@@ -7,13 +7,15 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import './attendance.html';
 
 Template.attendance.onCreated(function () {
-  court = FlowRouter.getParam('courtName').toLowerCase();
-  Meteor.subscribe('students.court', court);
-  Meteor.subscribe('volunteers.court', court);
-  Meteor.subscribe('attendance.date', court);
+  season = Session.get("season");
+  program = Session.get("program");
+  site = Session.get("site");
+  Meteor.subscribe('students.court', season, program, site);
+  Meteor.subscribe('volunteers.court', season, program, site);
+  Meteor.subscribe('attendance.date', season, program, site);
 
   // Get present students/volunteers to mark checkbox
-  Meteor.call('attendance.today', court, (error, result) => {
+  Meteor.call('attendance.today', season, program, site, (error, result) => {
     if (error) {
       console.log(error);
     } else {
@@ -26,8 +28,24 @@ Template.attendance.onCreated(function () {
 });
 
 Template.attendance.helpers({
-  courtName: function () {
-    return court.charAt(0).toUpperCase() + court.slice(1);
+  season: function () {
+    return season;
+  },
+  program: function () {
+    return program;
+  },
+  site: function () {
+    return site;
+  },
+  format: function(str) {
+    str = str.replace('-', " ");
+    str = str.replace(
+      /\w\S*/g,
+      function(txt){
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }
+    );
+    return str;
   },
   formattedDate: function() {
     return new Date().toDateString();
@@ -42,10 +60,18 @@ Template.attendance.helpers({
     return Session.get("volunteerIds").indexOf(id) > -1;
   },
   students() {
-    return Students.find({"court": court});
+    return Students.find({
+      "season": season,
+      "program": program,
+      "site": site
+    });
   },
   volunteers() {
-    return Volunteers.find({"court": court});
+    return Volunteers.find({
+      "season": season,
+      "program": program,
+      "site": site
+    });
   },
 });
 
@@ -56,11 +82,12 @@ Template.attendance.events({
     var presentVolunteers = Session.get("volunteerIds");
     console.log("pv:",presentVolunteers);
     console.log("ps:",presentStudents);
-    Meteor.call('attendance.upsert', court, presentStudents, presentVolunteers, (error) => {
+    Meteor.call('attendance.upsert', season, program, site, presentStudents, presentVolunteers, (error) => {
       if (error) {
         console.log(error);
       } else {
-        FlowRouter.go("/court/" + court);
+        var url = "/" + season + "/" + program + "/" + site;
+        FlowRouter.go(url);
       }
     });
     Meteor.subscribe('attendance.today');

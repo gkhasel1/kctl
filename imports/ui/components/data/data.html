@@ -51,7 +51,7 @@
   <div class="container">
     <ul>
       {{#each attendance}}
-        <p>{{ court }} {{ date }}</p>
+        <p>{{ seaoson }} {{ program }} {{ site }} {{ date }}</p>
         <p>[ {{ _id }} ]</p>
         {{> attend}}
       {{/each}}
@@ -79,6 +79,9 @@
 
 <template name="student">
   <p style="font-size:12px">court: {{court}}</p>
+  <p style="font-size:12px">season: {{season}}</p>
+  <p style="font-size:12px">program: {{program}}</p>
+  <p style="font-size:12px">site: {{site}}</p>
   <p style="font-size:12px">createdAt: {{createdAt}}</p>
   <p style="font-size:12px">firstName: {{firstName}}</p>
   <p style="font-size:12px">lastName: {{lastName}}</p>
@@ -107,6 +110,9 @@
 
 <template name="volunteer">
   <p style="font-size:12px">court: {{ court }}</p>
+  <p style="font-size:12px">season: {{season}}</p>
+  <p style="font-size:12px">program: {{program}}</p>
+  <p style="font-size:12px">site: {{site}}</p>
   <p style="font-size:12px">firstName: {{ firstName }}</p>
   <p style="font-size:12px">lastName: {{ lastName }}</p>
   <p style="font-size:12px">gender: {{ gender }}</p>
@@ -133,6 +139,9 @@
 
 <template name="attend">
   <p style="font-size:12px">court: {{ court }}</p>
+  <p style="font-size:12px">season: {{season}}</p>
+  <p style="font-size:12px">program: {{program}}</p>
+  <p style="font-size:12px">site: {{site}}</p>
   <p style="font-size:12px">studentIds: {{ studentIds }}</p>
   <p style="font-size:12px">volunteerIds: {{ volunteerIds }}</p>
   <p style="font-size:12px">createdAt: {{ createdAt }}</p>
@@ -141,6 +150,9 @@
 
 <template name="registration">
   <p style="font-size:12px">court: {{ court }}</p>
+  <p style="font-size:12px">season: {{season}}</p>
+  <p style="font-size:12px">program: {{program}}</p>
+  <p style="font-size:12px">site: {{site}}</p>
   <p style="font-size:12px">entityRole: {{ entityRole }}</p>
   <p style="font-size:12px">entityId: {{ entityId }}</p>
   <p style="font-size:12px">createdAt: {{ createdAt }}</p>

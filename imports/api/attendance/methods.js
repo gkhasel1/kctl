@@ -5,11 +5,13 @@ import { Attendance, AttendanceSchema } from './attendance.js';
 Attendance._ensureIndex({date: 1, court: 1}, {unique: 1});
 
 Meteor.methods({
-  'attendance.upsert'(court, studentIds, volunteerIds) {
+  'attendance.upsert'(season, program, site, studentIds, volunteerIds) {
     var data = {
       studentIds: studentIds,
       volunteerIds: volunteerIds,
-      court: court,
+      season: season,
+      program: program,
+      site: site,
       date: new Date().toDateString(),
       createdAt: new Date(),
     };
@@ -19,19 +21,21 @@ Meteor.methods({
     return Attendance.upsert(
       {
         date: new Date().toDateString(),
-        court: court,
+        season: season,
+        program: program,
+        site: site,
       },
       {
         $set: data,
       }
     );
   },
-  'attendance.today'(court) {
-    check(court, String);
-
+  'attendance.today'(season, program, site) {
     return Attendance.findOne({
       date: new Date().toDateString(),
-      court: court,
+      season: season,
+      program: program,
+      site: site
     });
   },
 });

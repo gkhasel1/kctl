@@ -5,6 +5,10 @@ Meteor.publish('students.all', function () {
   return Students.find({});
 });
 
-Meteor.publish('students.court', function (court) {
-  return Students.find({court: court});
+Meteor.publish('students.court', function (season, program, site) {
+  return Students.find({
+    season: season,
+    program: program,
+    site: site
+  });
 });

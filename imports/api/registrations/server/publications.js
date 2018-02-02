@@ -5,6 +5,10 @@ Meteor.publish('registrations.all', function () {
   return Registrations.find({});
 });
 
-Meteor.publish('registrations.current', function (court) {
-  return Registrations.find({court: court, season: CURRENT_SEASON});
+Meteor.publish('registrations.current', function (season, program, site) {
+  return Registrations.find({
+    season: season,
+    program: program,
+    site: site
+  });
 });

@@ -5,6 +5,10 @@ Meteor.publish('volunteers.all', function () {
   return Volunteers.find({});
 });
 
-Meteor.publish('volunteers.court', function (court) {
-  return Volunteers.find({court: court});
+Meteor.publish('volunteers.court', function (season, program, site) {
+  return Volunteers.find({
+    season: season,
+    program: program,
+    site: site
+  });
 });

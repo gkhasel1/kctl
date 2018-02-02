@@ -6,13 +6,31 @@ import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 Template.newVolunteer.onCreated(function newVolunteerOnCreated() {
-  court = FlowRouter.getParam('courtName');
+  season = Session.get("season");
+  program = Session.get("program");
+  site = Session.get("site");
   Session.set("involvement", []);
 });
 
 Template.newVolunteer.helpers({
-  courtName: function () {
-    return court.charAt(0).toUpperCase()+ court.slice(1);
+  season: function () {
+    return season;
+  },
+  program: function () {
+    return program;
+  },
+  site: function () {
+    return site;
+  },
+  format: function(str) {
+    str = str.replace('-', " ");
+    str = str.replace(
+      /\w\S*/g,
+      function(txt){
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }
+    );
+    return str;
   },
 });
 
@@ -31,7 +49,9 @@ Template.newVolunteer.events({
     event.preventDefault();
     var target = event.target;
     var volunteer = {
-      "court": court,
+      "season": season,
+      "program": program,
+      "site": site,
       "firstName": target.firstName.value,
       "lastName": target.lastName.value,
       "gender": target.gender.value,
@@ -65,13 +85,14 @@ Template.newVolunteer.events({
         var entityId = result;
         console.log("result-volunteer:", result);
 
-        Meteor.call('registrations.insert', court, entityId, "volunteer", (error, result) => {
+        Meteor.call('registrations.insert', season, program, site, entityId, "volunteer", (error, result) => {
           if (error) {
             console.log(error);
             alert("Error: Failed to register volunteer");
           } else {
             console.log("result-reg:", result);
-            FlowRouter.go("/court/" + court);
+            var url = "/" + season + "/" + program + "/" + site;
+            FlowRouter.go(url);
           }
         });
       }

@@ -1,12 +1,17 @@
 <template name="attendance">
   <h1>Kings County Tennis League</h1>
-  <h2>{{ courtName }}</h2>
+
+  <h2>{{format(season)}}</h2>
+  <h2>{{format(program)}}</h2>
+  <h2>{{format(site)}}</h2>
+
   <h3>{{ formattedDate }}</h3>
+
   <div class="form-style-8">
     <form class="attendance">
-      <p style="font-size:14px">
+      <!-- <p style="font-size:14px">
         You can take attendance as many times as you like. Only the last submission will be saved per day.
-      </p>
+      </p> -->
 
       <p>Students</p>
       {{#if students.count}}

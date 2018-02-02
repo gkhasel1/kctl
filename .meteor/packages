@@ -26,3 +26,4 @@ johanbrook:publication-collector  # Test a Meteor publication by collecting its 
 session@1.1.7
 aldeed:simple-schema
 dynamic-import@0.1.0
+u2622:persistent-session

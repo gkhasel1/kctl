@@ -6,12 +6,30 @@ import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 Template.newStudent.onCreated(function newStudentOnCreated() {
-  court = FlowRouter.getParam('courtName');
+    season = Session.get("season");
+    program = Session.get("program");
+    site = Session.get("site");
 });
 
 Template.newStudent.helpers({
-  courtName: function () {
-    return court.charAt(0).toUpperCase()+ court.slice(1);
+  season: function () {
+    return season;
+  },
+  program: function () {
+    return program;
+  },
+  site: function () {
+    return site;
+  },
+  format: function(str) {
+    str = str.replace('-', " ");
+    str = str.replace(
+      /\w\S*/g,
+      function(txt){
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }
+    );
+    return str;
   },
 });
 
@@ -20,7 +38,9 @@ Template.newStudent.events({
     event.preventDefault();
     var target = event.target;
     var student = {
-      "court": court,
+      "season": season,
+      "program": program,
+      "site": site,
       "createdAt": new Date(),
       "firstName": target.firstName.value,
       "lastName": target.lastName.value,
@@ -57,13 +77,14 @@ Template.newStudent.events({
         var entityId = result;
         console.log("result-student:", result);
 
-        Meteor.call('registrations.insert', court, entityId, "student", (error, result) => {
+        Meteor.call('registrations.insert', season, program, site, entityId, "student", (error, result) => {
           if (error) {
             console.log(error);
             alert("Error: Failed to register student");
           } else {
             console.log("result-reg:", result);
-            FlowRouter.go("/court/" + court);
+            var url = "/" + season + "/" + program + "/" + site;
+            FlowRouter.go(url);
           }
         });
       }

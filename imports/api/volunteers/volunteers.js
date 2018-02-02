@@ -10,14 +10,21 @@ Volunteers.allow({
 });
 
 export const VolunteerSchema = new SimpleSchema({
+  season: {
+    label: "Season volunteer is playing in.",
+    type: String,
+  },
+  program: {
+    label: "Program volunteer is playing in.",
+    type: String,
+  },
+  site: {
+    label: "Site volunteer is playing in.",
+    type: String,
+  },
   createdAt: {
     label: "Datetime that volunteer was created",
     type: Date,
-  },
-  court: {
-    label: "Court volunteer is playing on.",
-    type: String,
-    allowedValues: ['marcy', 'sumner', 'robinson', 'lafayette', 'tompkins'],
   },
   firstName: {
     label: "Volunteers first name",

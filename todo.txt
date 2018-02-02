@@ -1,29 +1,27 @@
 TODO
 =====
 [2] notifications of cancelled classes
-[4] new volunteers
 [5] returning student
 [6] returning volunteer
 [7] homework
 [8] accounts?
 
-[9] super secret data read page
 
 IMPROVEMENTS
 =============
  - radio/checkbox label align
  - better validation of registration forms (emails, phone numbers, etc.)
- - get rid of hardcoded CURRENT_SEASON value
- - use reg to populate attendance (right now uses user court field...)
- - need some kind of start new season button that resets student.court and CURRENT_SEASON etc.
- - hide the management buttons (attendance, data, roster, edit person etc.) unless a password is entered on the options page
+ - use reg to populate attendance (right now uses user season, program, site fields...)
  - season and court data as fixtures?
+
+ - make it possible to edit all data directly on the data page with a special password
+ - password protect the website
+ - icons for season, program, site
+
  - student surveys/homework?
+ - notifications?
 
- - [!!!!!!!!!!!!!] Split reg into creating new Student/Volunteer then setting up a registration record? Would make it easier for returning registrations?
-
- - when someone reregisters we will have to set the `court` in the student/volunteer record to have them populate in attendance
-
+ - NOTE: when someone reregisters we will have to set the `court` in the student/volunteer record to have them populate in attendance
 
 REGISTRATION:::::
 

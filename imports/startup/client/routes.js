@@ -35,7 +35,7 @@ FlowRouter.route('/', {
  * Court Options (Reg, Attendence etc.)
  *   courtName: {robinson, lafayette, marcy, sumner, tompkins}
  **/
-FlowRouter.route('/court/:courtName', {
+FlowRouter.route('/:season/:program/:site', {
   name: 'Options Page (per Court)',
   action(params) {
     BlazeLayout.render('App', { main: 'Options' });
@@ -45,7 +45,7 @@ FlowRouter.route('/court/:courtName', {
 /**
  * Register a student for a court
  **/
-FlowRouter.route('/court/:courtName/new-student', {
+FlowRouter.route('/:season/:program/:site/new-student', {
   name: 'New Student',
   action(params) {
     console.log("reg student: ", params);
@@ -56,7 +56,7 @@ FlowRouter.route('/court/:courtName/new-student', {
 /**
  * Register a volunteer for a court
  **/
-FlowRouter.route('/court/:courtName/new-volunteer', {
+FlowRouter.route('/:season/:program/:site/new-volunteer', {
   name: 'New Volunteer',
   action(params) {
     BlazeLayout.render('App', { main: 'RegisterVolunteer' });
@@ -66,7 +66,7 @@ FlowRouter.route('/court/:courtName/new-volunteer', {
 /**
  * Court Session Attendance
  **/
-FlowRouter.route('/court/:courtName/attendance', {
+FlowRouter.route('/:season/:program/:site/attendance', {
   name: 'Court Attendance',
   action(params) {
     BlazeLayout.render('App', { main: 'Attendance' });

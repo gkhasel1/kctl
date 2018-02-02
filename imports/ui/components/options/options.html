@@ -1,19 +1,36 @@
 <template name="options">
   <h1>Kings County Tennis League</h1>
-  <h2>{{capitalize (courtName)}}</h2>
+
+  <h2>{{format(season)}}</h2>
+  <h2>{{format(program)}}</h2>
+  <h2>{{format(site)}}</h2>
+
   <br>
   <br>
-  <button class="option-button" id="new-student">New Student</button>
+  <button class="option-button" id="new-student">
+    New Student
+  </button>
+
   <br>
-  <button class="option-button" id="new-volunteer">New Volunteer</button>
+  <button class="option-button" id="new-volunteer">
+    New Volunteer
+  </button>
   <br>
+
 <!--   <button class="option-button" id="returning-student">Returning Student</button>
   <br>
   <button class="option-button" id="returning-volunteer">Returning Volunteer</button>
   <br> -->
+
   <br>
   <br>
-  <button class="option-button" id="attendance">Attendance</button>
+  <button class="option-button" id="attendance">
+    Attendance
+  </button>
   <br>
-  <button class="option-button" id="nofitications">Notifications</button>
+
+  <!-- <button class="option-button" id="nofitications">
+    Notifications
+  </button> -->
+
 </template>

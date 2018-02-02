@@ -2,15 +2,25 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { Registrations, RegistrationsSchema, CURRENT_SEASON } from './registrations.js';
 
-Registrations._ensureIndex({entityId: 1, court: 1, season: 1}, {unique: 1});
+Registrations._ensureIndex(
+  {
+    entityId: 1,
+    season: 1,
+    program: 1,
+    site: 1
+  }, {
+    unique: 1
+  }
+);
 
 Meteor.methods({
-  'registrations.insert'(court, entityId, entityRole) {
+  'registrations.insert'(season, program, site, entityId, entityRole) {
     var data = {
       "entityId": entityId,
       "entityRole": entityRole,
-      "court": court,
-      "season": CURRENT_SEASON,
+      "season": season,
+      "program": program,
+      "site": site,
       "createdAt": new Date(),
     };
 
