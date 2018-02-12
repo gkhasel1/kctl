@@ -10,6 +10,12 @@ Template.attendance.onCreated(function () {
   season = Session.get("season");
   program = Session.get("program");
   site = Session.get("site");
+
+  if (!season || !program || ! site) {
+      console.error("Missing season/program/site");
+      FlowRouter.go("/");
+  }
+
   Meteor.subscribe('students.court', season, program, site);
   Meteor.subscribe('volunteers.court', season, program, site);
   Meteor.subscribe('attendance.date', season, program, site);
@@ -64,13 +70,23 @@ Template.attendance.helpers({
       "season": season,
       "program": program,
       "site": site
+    },
+    {
+      sort: {
+        "lastName": 1,
+      }
     });
   },
   volunteers() {
     return Volunteers.find({
       "season": season,
       "program": program,
-      "site": site
+      //"site": site
+    },
+    {
+      sort: {
+        "lastName": 1,
+      }
     });
   },
 });

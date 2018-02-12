@@ -6,9 +6,14 @@ import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 Template.newStudent.onCreated(function newStudentOnCreated() {
-    season = Session.get("season");
-    program = Session.get("program");
-    site = Session.get("site");
+  season = Session.get("season");
+  program = Session.get("program");
+  site = Session.get("site");
+
+  if (!season || !program || ! site) {
+      console.error("Missing season/program/site");
+      FlowRouter.go("/");
+  }
 });
 
 Template.newStudent.helpers({

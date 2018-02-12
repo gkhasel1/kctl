@@ -2,6 +2,10 @@ import './courts.html';
 
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
+Template.courts.onCreated(function () {
+    Session.clear();
+});
+
 Template.courts.helpers({
     seasons: function(){
         return ["Winter"];
@@ -37,9 +41,14 @@ Template.courts.events({
         var season = Session.get("season");
         var program = Session.get("program");
         var site = Session.get("site");
-        var url = "/" + season + "/" + program + "/" + site;
-        console.log(Session);
-        console.log(url);
-        FlowRouter.go(url);
+
+        if (!season || !program || ! site) {
+            console.error("Missing season/program/site");
+        } else {
+            var url = "/" + season + "/" + program + "/" + site;
+            console.log(Session);
+            console.log(url);
+            FlowRouter.go(url);
+        }
   }
 });

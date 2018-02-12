@@ -3,24 +3,27 @@
   <h1>Kings County Tennis League</h1>
 
   <div class="wrap">
-    <p>Season</p>
-    <select id="season-select">
+    <!-- <p>Season</p> -->
+    <br>
+    <select class="full-width" id="season-select">
       <option disabled="disabled" selected="selected">Season</option>
       {{#each seasons}}
         <option value="{{this}}">{{this}}</option>
       {{/each}}
     </select>
 
-    <p>Program</p>
-    <select id="program-select">
+    <!-- <p>Program</p> -->
+    <br>
+    <select class="full-width" id="program-select">
       <option disabled="disabled" selected="selected">Program</option>
       {{#each programs}}
         <option value="{{this}}">{{this}}</option>
       {{/each}}
     </select>
 
-    <p>Site</p>
-    <select id="site-select">
+    <!-- <p>Site</p> -->
+    <br>
+    <select class="full-width" id="site-select">
       <option disabled="disabled" selected="selected">Site</option>
       {{#each sites}}
         <option value="{{this}}">{{this}}</option>

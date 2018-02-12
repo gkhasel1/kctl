@@ -3,9 +3,15 @@ import './options.html';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 Template.options.onCreated(function optionsOnCreated() {
-    season = Session.get("season");
-    program = Session.get("program");
-    site = Session.get("site");
+  season = Session.get("season");
+  program = Session.get("program");
+  site = Session.get("site");
+
+  if (!season || !program || ! site) {
+      console.error("Missing season/program/site");
+      FlowRouter.go("/");
+  }
+
 });
 
 Template.options.helpers({

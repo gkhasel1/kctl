@@ -9,6 +9,12 @@ Template.newVolunteer.onCreated(function newVolunteerOnCreated() {
   season = Session.get("season");
   program = Session.get("program");
   site = Session.get("site");
+
+  if (!season || !program || ! site) {
+      console.error("Missing season/program/site");
+      FlowRouter.go("/");
+  }
+
   Session.set("involvement", []);
 });
 
