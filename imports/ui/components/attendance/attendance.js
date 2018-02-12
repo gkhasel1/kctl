@@ -18,19 +18,9 @@ Template.attendance.onCreated(function () {
 
   Meteor.subscribe('students.court', season, program, site);
   Meteor.subscribe('volunteers.court', season, program, site);
-  Meteor.subscribe('attendance.date', season, program, site);
 
-  // Get present students/volunteers to mark checkbox
-  Meteor.call('attendance.today', season, program, site, (error, result) => {
-    if (error) {
-      console.log(error);
-    } else {
-      var studentIds = result ? result.studentIds : [];
-      var volunteerIds = result ? result.volunteerIds : [];
-      Session.set("studentIds", studentIds);
-      Session.set("volunteerIds", volunteerIds);
-    }
-  });
+  Session.set("studentIds", []);
+  Session.set("volunteerIds", []);
 });
 
 Template.attendance.helpers({
@@ -81,7 +71,7 @@ Template.attendance.helpers({
     return Volunteers.find({
       "season": season,
       "program": program,
-      //"site": site
+      "site": site
     },
     {
       sort: {
@@ -94,11 +84,20 @@ Template.attendance.helpers({
 Template.attendance.events({
   'submit .attendance'(event) {
     event.preventDefault();
+
+    if (!day || !month || !year) {
+      console.error("Missing Date");
+      return;
+    }
+
     var presentStudents = Session.get("studentIds");
     var presentVolunteers = Session.get("volunteerIds");
+    var date = Session.get("day") + "-" + Session.get("month") + "-" + Session.get("year");
+
     console.log("pv:",presentVolunteers);
     console.log("ps:",presentStudents);
-    Meteor.call('attendance.upsert', season, program, site, presentStudents, presentVolunteers, (error) => {
+
+    Meteor.call('attendance.upsert', season, program, site, date, presentStudents, presentVolunteers, (error) => {
       if (error) {
         console.log(error);
       } else {
@@ -106,7 +105,7 @@ Template.attendance.events({
         FlowRouter.go(url);
       }
     });
-    Meteor.subscribe('attendance.today');
+
     Session.set("studentIds", presentStudents);
     Session.set("volunteerIds", presentVolunteers);
   },
@@ -144,4 +143,19 @@ Template.attendance.events({
 
     Session.set("volunteerIds", presentVolunteers);
   },
+  'change #day': function (event, template) {
+    var day = $(event.currentTarget).val();
+    console.log("day : " + day);
+    Session.set("day", day);
+  },
+  'change #month': function (event, template) {
+    var month = $(event.currentTarget).val();
+    console.log("month : " + month);
+    Session.set("month", month);
+  },
+  'change #year': function (event, template) {
+    var year = $(event.currentTarget).val();
+    console.log("year : " + year);
+    Session.set("year", year);
+  }
 });
